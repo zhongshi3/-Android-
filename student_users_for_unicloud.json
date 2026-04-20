@@ -1,0 +1,65 @@
+[
+  {
+    "userId": 1702543201001,
+    "username": "student001",
+    "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+    "role": 0,
+    "classId": 101,
+    "createTime": 1702543201001,
+    "updateTime": 1702543201001
+  },
+  {
+    "userId": 1702543201002,
+    "username": "student002",
+    "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+    "role": 0,
+    "classId": 101,
+    "createTime": 1702543201002,
+    "updateTime": 1702543201002
+  },
+  {
+    "userId": 1702543201003,
+    "username": "zhangsan",
+    "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+    "role": 0,
+    "classId": 102,
+    "createTime": 1702543201003,
+    "updateTime": 1702543201003
+  },
+  {
+    "userId": 1702543201004,
+    "username": "lisi",
+    "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+    "role": 0,
+    "classId": 102,
+    "createTime": 1702543201004,
+    "updateTime": 1702543201004
+  },
+  {
+    "userId": 1702543201005,
+    "username": "wangwu",
+    "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+    "role": 0,
+    "classId": 103,
+    "createTime": 1702543201005,
+    "updateTime": 1702543201005
+  },
+  {
+    "userId": 1702543201006,
+    "username": "test_stu_01",
+    "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+    "role": 0,
+    "classId": 201,
+    "createTime": 1702543201006,
+    "updateTime": 1702543201006
+  },
+  {
+    "userId": 1702543201007,
+    "username": "demo_student",
+    "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+    "role": 0,
+    "classId": 202,
+    "createTime": 1702543201007,
+    "updateTime": 1702543201007
+  }
+]

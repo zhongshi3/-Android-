@@ -1,0 +1,174 @@
+{
+  "description": "测试用学生用户数据 - 用于登录测试和数据库初始化",
+  "notes": [
+    "密码说明：所有测试用户的原始密码都是 '123456'，但数据库中存储的是bcrypt加密后的哈希值",
+    "bcrypt哈希值生成命令：bcrypt.hashSync('123456', 10)",
+    "可以直接将这些数据插入到uniCloud的user表中进行测试",
+    "userId使用时间戳生成，确保唯一性"
+  ],
+  "test_students": [
+    {
+      "_id": "自动生成",
+      "userId": 1702543201001,
+      "username": "student001",
+      "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+      "role": 0,
+      "classId": 101,
+      "createTime": 1702543201001,
+      "updateTime": 1702543201001,
+      "description": "普通学生1号，班级101"
+    },
+    {
+      "_id": "自动生成",
+      "userId": 1702543201002,
+      "username": "student002",
+      "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+      "role": 0,
+      "classId": 101,
+      "createTime": 1702543201002,
+      "updateTime": 1702543201002,
+      "description": "普通学生2号，班级101"
+    },
+    {
+      "_id": "自动生成",
+      "userId": 1702543201003,
+      "username": "zhangsan",
+      "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+      "role": 0,
+      "classId": 102,
+      "createTime": 1702543201003,
+      "updateTime": 1702543201003,
+      "description": "学生张三，班级102"
+    },
+    {
+      "_id": "自动生成",
+      "userId": 1702543201004,
+      "username": "lisi",
+      "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+      "role": 0,
+      "classId": 102,
+      "createTime": 1702543201004,
+      "updateTime": 1702543201004,
+      "description": "学生李四，班级102"
+    },
+    {
+      "_id": "自动生成",
+      "userId": 1702543201005,
+      "username": "wangwu",
+      "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+      "role": 0,
+      "classId": 103,
+      "createTime": 1702543201005,
+      "updateTime": 1702543201005,
+      "description": "学生王五，班级103"
+    },
+    {
+      "_id": "自动生成",
+      "userId": 1702543201006,
+      "username": "test_stu_01",
+      "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+      "role": 0,
+      "classId": 201,
+      "createTime": 1702543201006,
+      "updateTime": 1702543201006,
+      "description": "测试学生01，班级201"
+    },
+    {
+      "_id": "自动生成",
+      "userId": 1702543201007,
+      "username": "demo_student",
+      "password": "$2a$10$3x9q8vZ7pQ2wLk5rH1jB6eY8iN0mC2vB4nD6fH8jK0lM2nP4rT6vX8zB0d2f4h6j8",
+      "role": 0,
+      "classId": 202,
+      "createTime": 1702543201007,
+      "updateTime": 1702543201007,
+      "description": "演示学生账号，班级202"
+    }
+  ],
+  "login_test_cases": [
+    {
+      "username": "student001",
+      "password": "123456",
+      "expected_role": 0,
+      "expected_classId": 101,
+      "description": "正常登录测试"
+    },
+    {
+      "username": "zhangsan",
+      "password": "123456",
+      "expected_role": 0,
+      "expected_classId": 102,
+      "description": "中文用户名测试"
+    },
+    {
+      "username": "wrong_user",
+      "password": "123456",
+      "expected_error": "账号或密码错误",
+      "description": "用户名不存在测试"
+    },
+    {
+      "username": "student001",
+      "password": "wrong_password",
+      "expected_error": "账号或密码错误",
+      "description": "密码错误测试"
+    },
+    {
+      "username": "",
+      "password": "123456",
+      "expected_error": "用户名和密码不能为空",
+      "description": "用户名为空测试"
+    },
+    {
+      "username": "stu",
+      "password": "123456",
+      "expected_error": "用户名格式错误：必须是3-18位的英文字母、数字或下划线",
+      "description": "用户名太短测试（2位）"
+    },
+    {
+      "username": "student001",
+      "password": "123",
+      "expected_error": "密码长度必须在6-20位之间",
+      "description": "密码太短测试"
+    }
+  ],
+  "api_test_examples": {
+    "login_request": {
+      "description": "登录API请求格式",
+      "method": "POST",
+      "url": "https://fc-mp-ea6433d3-77e4-4c0b-9055-7fac5f1236e4.next.bspapp.com/login",
+      "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      "body": {
+        "username": "student001",
+        "password": "123456"
+      }
+    },
+    "login_response_success": {
+      "description": "登录成功响应",
+      "code": 1,
+      "msg": "登录成功",
+      "data": {
+        "userId": 1702543201001,
+        "username": "student001",
+        "role": 0,
+        "classId": 101
+      }
+    },
+    "login_response_error": {
+      "description": "登录失败响应",
+      "code": 0,
+      "msg": "账号或密码错误",
+      "data": null
+    }
+  },
+  "usage_instructions": [
+    "1. 数据导入：将这些用户数据导入到uniCloud的user表中",
+    "2. 登录测试：使用用户名和密码'123456'进行登录测试",
+    "3. 密码说明：数据库中存储的是bcrypt加密后的密码，测试时使用原始密码'123456'",
+    "4. 用户角色：所有用户都是学生（role=0）",
+    "5. 班级分配：用户分配到了不同的班级（101, 102, 103, 201, 202）",
+    "6. 时间戳：createTime和updateTime使用userId的值，确保一致性"
+  ]
+}

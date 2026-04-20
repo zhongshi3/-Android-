@@ -1,0 +1,275 @@
+const { Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType, PageBreak } = require('docx');
+const fs = require('fs');
+
+// 创建文档
+const doc = new Document({
+    styles: {
+        default: {
+            document: {
+                run: { font: "SimSun", size: 24 }  // 宋体小四 12pt
+            }
+        },
+        paragraphStyles: [
+            {
+                id: "Heading1",
+                name: "Heading 1",
+                basedOn: "Normal",
+                next: "Normal",
+                quickFormat: true,
+                run: { size: 28, bold: true, font: "SimHei" },  // 黑体三号
+                paragraph: { spacing: { before: 240, after: 240 }, alignment: AlignmentType.CENTER, outlineLevel: 0 }
+            },
+            {
+                id: "Heading2",
+                name: "Heading 2",
+                basedOn: "Normal",
+                next: "Normal",
+                quickFormat: true,
+                run: { size: 24, bold: true, font: "SimHei" },  // 黑体四号
+                paragraph: { spacing: { before: 180, after: 120 }, outlineLevel: 1 }
+            },
+            {
+                id: "Heading3",
+                name: "Heading 3",
+                basedOn: "Normal",
+                next: "Normal",
+                quickFormat: true,
+                run: { size: 24, font: "SimHei" },
+                paragraph: { spacing: { before: 120, after: 80 }, outlineLevel: 2 }
+            }
+        ]
+    },
+    sections: [{
+        properties: {
+            page: {
+                size: { width: 11906, height: 16838 },  // A4
+                margin: { top: 2838, right: 2838, bottom: 2838, left: 2838 }  // 上下2.54cm, 左右3.17cm (暨大标准)
+            }
+        },
+        children: [
+            // 封面标题
+            new Paragraph({
+                children: [new TextRun({ text: "基于Android的离散数学学习助手", font: "SimHei", size: 44, bold: true })],
+                alignment: AlignmentType.CENTER,
+                spacing: { before: 2400, after: 600 }
+            }),
+            new Paragraph({
+                children: [new TextRun({ text: "本科毕业论文", font: "SimHei", size: 32 })],
+                alignment: AlignmentType.CENTER,
+                spacing: { before: 600, after: 1200 }
+            }),
+            // 分割线
+            new Paragraph({
+                children: [new TextRun({ text: "─".repeat(40) })],
+                alignment: AlignmentType.CENTER,
+                spacing: { before: 400, after: 2400 }
+            }),
+            // 目录标题
+            new Paragraph({
+                children: [new TextRun({ text: "目  录", font: "SimHei", size: 36, bold: true })],
+                alignment: AlignmentType.CENTER,
+                spacing: { before: 400, after: 600 }
+            }),
+
+            // 第一章 绪论
+            new Paragraph({
+                children: [new TextRun({ text: "第一章 绪论", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({ children: [new TextRun({ text: "1.1 研究背景与意义", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.1.1 教育信息化发展现状", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.1.2 移动学习应用趋势", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.1.3 研究目的与意义", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.2 国内外研究现状", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.2.1 国外在线教育平台发展", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.2.2 国内智慧教育应用研究", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.2.3 现有答题系统存在的问题", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.3 主要研究内容", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "1.4 论文结构安排", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+
+            // 第二章 系统相关技术介绍
+            new Paragraph({
+                children: [new TextRun({ text: "第二章 系统相关技术介绍", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({ children: [new TextRun({ text: "2.1 开发技术概述", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.1.1 Android开发技术", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.1.2 Kotlin语言特性", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.2 云开发技术", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.2.1 UniCloud云数据库", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.2.2 云函数技术", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.2.3 前端HBuilderX开发工具", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.3 本地数据存储技术", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.3.1 SQLite数据库", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.3.2 SharedPreferences配置存储", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.3.3 JSON数据交换格式", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.4 系统架构模式", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.4.1 MVVM架构设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "2.4.2 分层架构设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+
+            // 第三章 系统需求分析
+            new Paragraph({
+                children: [new TextRun({ text: "第三章 系统需求分析", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({ children: [new TextRun({ text: "3.1 系统可行性分析", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.1.1 技术可行性", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.1.2 经济可行性", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.1.3 操作可行性", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.2 用户角色分析", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.2.1 学生用户需求", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.2.2 教师用户需求", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.2.3 系统管理员需求", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.3 功能需求分析", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.3.1 用户注册登录模块", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.3.2 班级管理模块", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.3.3 题目管理模块", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.3.4 答题考试模块", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.3.5 作业批改模块", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.3.6 知识图谱模块", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.4 非功能需求分析", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.4.1 性能需求", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.4.2 安全需求", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.4.3 可靠性需求", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.4.4 易用性需求", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.5 数据流分析", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.5.1 顶层数据流图", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.5.2 0层数据流图", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.5.3 数据字典", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.6 用例分析", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.6.1 学生用例图", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "3.6.2 教师用例图", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+
+            // 第四章 系统设计
+            new Paragraph({
+                children: [new TextRun({ text: "第四章 系统设计", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({ children: [new TextRun({ text: "4.1 系统总体设计", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.1.1 系统功能结构图", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.1.2 系统模块划分", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.1.3 系统流程图", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.2 数据库设计", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.2.1 数据库概念设计（E-R图）", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.2.2 数据库逻辑设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.2.3 数据库物理设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.2.4 云数据库与本地数据库同步策略", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.3 云函数设计", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.3.1 云函数架构", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.3.2 注册云函数设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.3.3 数据操作云函数设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.4 界面设计", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.4.1 界面设计原则", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.4.2 登录注册界面设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.4.3 学生主界面设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "4.4.4 教师管理界面设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+
+            // 第五章 系统实现
+            new Paragraph({
+                children: [new TextRun({ text: "第五章 系统实现", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({ children: [new TextRun({ text: "5.1 开发环境配置", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.1.1 硬件环境", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.1.2 软件环境", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.1.3 开发工具配置", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.2 用户认证模块实现", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.2.1 注册功能实现", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.2.2 登录验证实现", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.2.3 权限控制实现", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.3 班级管理模块实现", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.3.1 创建班级功能", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.3.2 班级信息管理", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.3.3 学生加入班级", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.4 题目管理模块实现", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.4.1 题目录入功能", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.4.2 题目分类管理", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.4.3 题目删除与恢复", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.5 答题考试模块实现", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.5.1 题目展示实现", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.5.2 答案提交处理", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.5.3 离线缓存机制", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.6 作业批改模块实现", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.6.1 待批改作业列表", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.6.2 在线批改功能", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.6.3 批改结果反馈", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.7 知识图谱模块实现", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.7.1 知识节点设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.7.2 关系边设计", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.7.3 图谱可视化展示", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.8 云端数据同步实现", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.8.1 数据上传机制", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.8.2 数据下载机制", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "5.8.3 同步冲突处理", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+
+            // 第六章 系统测试
+            new Paragraph({
+                children: [new TextRun({ text: "第六章 系统测试", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({ children: [new TextRun({ text: "6.1 测试概述", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.1.1 测试目的", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.1.2 测试原则", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.1.3 测试环境", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.2 功能测试", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.2.1 用户注册登录测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.2.2 班级管理功能测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.2.3 题目管理功能测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.2.4 答题功能测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.2.5 批改功能测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.3 性能测试", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.3.1 响应时间测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.3.2 并发用户测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.3.3 数据同步性能测试", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.4 兼容性测试", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.4.1 不同Android版本兼容性", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.4.2 不同屏幕尺寸适配", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.5 测试结果分析", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.5.1 测试用例通过率", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "6.5.2 缺陷统计与分析", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+
+            // 第七章 总结与展望
+            new Paragraph({
+                children: [new TextRun({ text: "第七章 总结与展望", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({ children: [new TextRun({ text: "7.1 研究工作总结", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "7.2 系统特色与创新点", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "7.3 研究不足与展望", font: "SimSun", size: 24 })], indent: { left: 420 }, spacing: { before: 80, after: 60 } }),
+            new Paragraph({ children: [new TextRun({ text: "7.3.1 功能扩展方向", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+            new Paragraph({ children: [new TextRun({ text: "7.3.2 技术优化方向", font: "SimSun", size: 24 })], indent: { left: 840 }, spacing: { before: 40, after: 40 } }),
+
+            // 参考文献
+            new Paragraph({
+                children: [new TextRun({ text: "参考文献", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+
+            // 致谢
+            new Paragraph({
+                children: [new TextRun({ text: "致谢", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+
+            // 附录
+            new Paragraph({
+                children: [new TextRun({ text: "附录A 核心代码", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 400, after: 200 }
+            }),
+            new Paragraph({
+                children: [new TextRun({ text: "附录B 系统使用说明书", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 200, after: 200 }
+            }),
+            new Paragraph({
+                children: [new TextRun({ text: "附录C 攻读学位期间发表的学术论文", font: "SimHei", size: 24, bold: true })],
+                spacing: { before: 200, after: 200 }
+            }),
+        ]
+    }]
+});
+
+// 保存文档
+Packer.toBuffer(doc).then(buffer => {
+    fs.writeFileSync("C:/Users/wuyx/Desktop/毕业论文目录.docx", buffer);
+    console.log("文档已生成: C:/Users/wuyx/Desktop/毕业论文目录.docx");
+});

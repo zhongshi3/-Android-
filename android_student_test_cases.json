@@ -1,0 +1,54 @@
+{
+  "test_students": [
+    {
+      "username": "student001",
+      "password": "123456",
+      "expected_userId": 1702543201001,
+      "expected_classId": 101,
+      "description": "测试学生001，班级101"
+    },
+    {
+      "username": "zhangsan",
+      "password": "123456",
+      "expected_userId": 1702543201003,
+      "expected_classId": 102,
+      "description": "学生张三，班级102"
+    },
+    {
+      "username": "demo_student",
+      "password": "123456",
+      "expected_userId": 1702543201007,
+      "expected_classId": 202,
+      "description": "演示学生，班级202"
+    }
+  ],
+  "invalid_test_cases": [
+    {
+      "username": "wrong_user",
+      "password": "123456",
+      "expected_error": "账号或密码错误",
+      "description": "用户名不存在"
+    },
+    {
+      "username": "student001",
+      "password": "wrong_pass",
+      "expected_error": "账号或密码错误",
+      "description": "密码错误"
+    },
+    {
+      "username": "stu",
+      "password": "123456",
+      "expected_error": "用户名格式错误",
+      "description": "用户名太短（2位）"
+    },
+    {
+      "username": "student001",
+      "password": "123",
+      "expected_error": "密码长度必须在6-20位之间",
+      "description": "密码太短（3位）"
+    }
+  ],
+  "android_test_code": {
+    "kotlin_login_example": "// Kotlin 登录测试代码\nprivate fun testStudentLogin() {\n    val testUsername = \"student001\"\n    val testPassword = \"123456\"\n    \n    CloudApiHelper.login(testUsername, testPassword, object : CloudApiHelper.LoginCallback {\n        override fun onResult(response: CloudApiHelper.LoginResponse) {\n            if (response.success) {\n                val userInfo = response.userInfo\n                if (userInfo != null) {\n                    println(\"登录成功: userId=\${userInfo.userId}, username=\${userInfo.username}\")\n                    println(\"用户角色: \${userInfo.role} (0=学生)\")\n                    println(\"班级ID: \${userInfo.classId}\")\n                    \n                    // 保存用户信息\n                    UserManager.saveUserLogin(userInfo)\n                    \n                    // 验证保存的信息\n                    println(\"保存的用户ID: \${UserManager.getUserId()}\")\n                    println(\"登录状态: \${UserManager.isLoggedIn()}\")\n                    println(\"用户类型: \${UserManager.getUserTypeDescription()}\")\n                }\n            } else {\n                println(\"登录失败: \${response.message}\")\n            }\n        }\n    })\n}"
+  }
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white">
+
+    <!-- 章节名称 -->
+    <TextView
+        android:id="@+id/tv_chapter_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="第1章 命题逻辑"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp" />
+
+    <!-- 习题统计 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="习题"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_question_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已完成 0 / 总计 0"
+            android:textColor="@color/dark_gray"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- 习题进度条 -->
+    <ProgressBar
+        android:id="@+id/progress_question_chapter"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="8dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_question" />
+
+    <!-- 知识点统计 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="知识点"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_knowledge_stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已学习 0 / 总计 0"
+            android:textColor="@color/dark_gray"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- 知识点进度条 -->
+    <ProgressBar
+        android:id="@+id/progress_knowledge_chapter"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_marginTop="6dp"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/progress_knowledge" />
+
+</LinearLayout>

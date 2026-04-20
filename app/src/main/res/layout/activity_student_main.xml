@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingHorizontal="30dp"
+    android:paddingTop="0dp"
+    tools:context=".StudentMainActivity">
+
+    <!-- 顶部栏：用户头像 + 页面标题 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- 用户头像按钮 -->
+        <ImageButton
+            android:id="@+id/btn_user_avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:contentDescription="用户"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_myplaces" />
+
+        <!-- 页面标题 -->
+    </LinearLayout>
+
+    <!-- 知识库按钮 -->
+    <Button
+        android:id="@+id/btn_knowledge_base"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/btn_main_bg"
+        android:text="知识库"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
+    <!-- 习题库按钮 -->
+    <Button
+        android:id="@+id/btn_exercise_book"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/btn_main_bg"
+        android:text="习题库"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
+    <!-- 错题本按钮 -->
+    <Button
+        android:id="@+id/btn_error_book"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/btn_main_bg"
+        android:text="错题本"
+        android:textColor="@android:color/white"
+        android:textSize="30sp" />
+
+</LinearLayout>

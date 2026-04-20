@@ -1,0 +1,1432 @@
+{
+  "questions": [
+    {
+      "questionNumber": 1,
+      "content": "下列哪些公式为永真蕴含式？( ) (1)¬Q=>Q→P (2)¬Q=>P→Q (3)P=>P→Q (4)¬P∧(P∨Q)=>¬P ",
+      "answer": "（1），（4）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 2,
+      "content": "下列公式中哪些是永真式？( ) (1)(┐P∨Q)→(Q→┐R) (2)P→(Q→Q) (3)(P∨Q)→P (4)P→(P∨Q) ",
+      "answer": "（2），（3），（4）",
+      "sectionId": 2
+    },
+    {
+      "questionNumber": 3,
+      "content": "设有下列公式，请问哪几个是永真蕴涵式?( ) (1)P=>P∨Q (2) P∧Q=>P (3) P∧Q=>P∨Q (4)P∧(P→Q)=>Q (5) ¬(P→Q)=>P (6) ¬P∧(P∨Q)=>¬P ",
+      "answer": "（2），（3），（4），（5），（6）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 4,
+      "content": "公式(∀x((A(x)∧B(y，x))∧(∃z C(y，z))∧D(x)中，自由变元是( )，约束变元是( )。 ",
+      "answer": "x,y,   x,z",
+      "sectionId": 10
+    },
+    {
+      "questionNumber": 5,
+      "content": "判断下列语句是不是命题。若是，给出命题的真值。( ) 北京是中华人民共和国的首都。(2)陕西师大是一座工厂。(3)你喜欢唱歌吗？(4)若7+8＞18，则三角形有4条边。(5)前进！(6)给我一杯水吧！ ",
+      "answer": "（1） 是，T    （2） 是，F     （3） 不是（4） 是，T     （5） 不是     （6） 不是",
+      "sectionId": 1
+    },
+    {
+      "questionNumber": 6,
+      "content": "命题“存在一些人是大学生”的否定是( )，而命题“所有的人都是要死的”的否定是( )。 ",
+      "answer": "所有人都不是大学生，有些人不会死",
+      "sectionId": 9
+    },
+    {
+      "questionNumber": 7,
+      "content": "设P：我生病，Q：我去学校，则下列命题可符号化为( )。 (1)只有在生病时，我才不去学校 (2) 若我生病，则我不去学校(3)当且仅当我生病时，我才不去学校(4) 若我不生病，则我一定去学校 ",
+      "answer": "（1）¬Q→P  （2）P→¬Q  （3）¬Q↔P  （4）¬P→Q",
+      "sectionId": 1
+    },
+    {
+      "questionNumber": 8,
+      "content": "设个体域为整数集，则下列公式的意义是( )。 (1)∀x∃y(x+y=0) (2)∃y∀x(x+y=0) ",
+      "answer": "（1）对任一整数x存在整数 y满足x+y=0（2）存在整数y对任一整数x满足x+y=0",
+      "sectionId": 9
+    },
+    {
+      "questionNumber": 9,
+      "content": "设全体域D是正整数集合，确定下列命题的真值：(1)∀x∃y (xy=y)　( )　(2)∀x∃y(x+y=y)　( )(3)∀x∃y(x+y=x) 　( )　(4)∀x∃y(y=2x)　 ( ) ",
+      "answer": "（1） F  （2） F   （3）F   （4）T",
+      "sectionId": 9
+    },
+    {
+      "questionNumber": 10,
+      "content": "设谓词P(x)：x是奇数，Q(x)：x是偶数，谓词公式∀x(P(x)∨Q(x))在哪个个体域中为真?( ) (1) 自然数　(2) 实数　 (3) 复数　(4) (1)--(3)均成立 ",
+      "answer": "（1）",
+      "sectionId": 9
+    },
+    {
+      "questionNumber": 11,
+      "content": "命题“2是偶数或-3是负数”的否定是（ ）。 ",
+      "answer": "2不是偶数且-3不是负数。",
+      "sectionId": 1
+    },
+    {
+      "questionNumber": 12,
+      "content": "永真式的否定是（ ）(1) 永真式　(2) 永假式　(3) 可满足式　(4) (1)--(3)均有可能 ",
+      "answer": "（2）",
+      "sectionId": 2
+    },
+    {
+      "questionNumber": 13,
+      "content": "公式(¬P∨Q)∧(¬P∨¬Q)化简为（ ），公式 Q∨(P∨(P∨Q))可化简为（ ）。 ",
+      "answer": "¬P ，Q∨P",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 14,
+      "content": "谓词公式∀x(P(x)∨∃yR(y))→Q(x)中量词∀x的辖域是（ ）。 ",
+      "answer": "P(x)∨∃yR(y)",
+      "sectionId": 10
+    },
+    {
+      "questionNumber": 15,
+      "content": "令R(x):x是实数，Q(x):x是有理数。则命题“并非每个实数都是有理数”的符号化表示为（ ）。 ",
+      "answer": "¬∀x(R(x)→Q(x))",
+      "sectionId": 9
+    },
+    {
+      "questionNumber": 16,
+      "content": "设A={a,{a}}，下列命题错误的是（ ）。(1) {a}∈P(A)　(2) {a}⊆P(A)　(3) {{a}}∈P(A)　(4) {{a}}⊆P(A) ",
+      "answer": "（2）",
+      "sectionId": 13
+    },
+    {
+      "questionNumber": 17,
+      "content": "在0（ ）∅之间写上正确的符号。(1) =　(2) ∈　(3) ⊂　(4) ⊆ ",
+      "answer": "（4）",
+      "sectionId": 13
+    },
+    {
+      "questionNumber": 18,
+      "content": "若集合S的基数|S|=5，则S的幂集的基数|P(S)|=（ ）。 ",
+      "answer": "32",
+      "sectionId": 13
+    },
+    {
+      "questionNumber": 19,
+      "content": "设P={x|(x+1)²≤4且x∈R},Q={x|5≤x²+16且x∈R},则下列命题哪个正确（ ） (1) Q⊂P　(2) Q⊆P　(3) P⊂Q　(4) P=Q ",
+      "answer": "（3）",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 20,
+      "content": "下列各集合中，哪几个分别相等( )。(1) A1={a,b} (2) A2={b,a} (3) A3={a,b,a} (4) A4={a,b,c}(5) A5={x|(x-a)(x-b)(x-c)=0} (6) A6={x|x²-(a+b)x+ab=0} ",
+      "answer": "A1=A2=A3=A6， A4=A5",
+      "sectionId": 13
+    },
+    {
+      "questionNumber": 21,
+      "content": "若A-B=Ф，则下列哪个结论不可能正确？( )(1) A=Ф (2) B=Ф　(3) A⊆B (4) B⊆A ",
+      "answer": "（4）",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 22,
+      "content": "判断下列命题哪个为真?( )(1) A-B=B-A => A=B (2) 空集是任何集合的真子集(3) 空集只是非空集合的子集 (4) 若A的一个元素属于B，则A=B ",
+      "answer": "（1）",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 23,
+      "content": "判断下列命题哪几个为正确？( )　(1) {Ф}∈{Ф,{{Ф}}} (2) {Ф}⊆{Ф,{{Ф}}} (3) Ф∈{{Ф}}(4) Ф⊆{Ф} (5) {a,b}∈{a,b,{a},{b}} ",
+      "answer": "（2），（4）",
+      "sectionId": 13
+    },
+    {
+      "questionNumber": 24,
+      "content": "判断下列命题哪几个正确？( )(1) 所有空集都不相等 (2) {Ф}⊇Ф (4) 若A为非空集，则A⊆A成立。 ",
+      "answer": "（2）",
+      "sectionId": 13
+    },
+    {
+      "questionNumber": 25,
+      "content": "设¬A∩B=¬A∩C，¬A∩B=¬A∩C，则B( )C。 ",
+      "answer": "=",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 26,
+      "content": "判断下列命题哪几个正确？( )(1) 若A∪B＝A∪C，则B＝C (2) {a,b}={b,a} (3) P(A∩B)⊆P(A)∩P(B) （P(S)表示S的幂集）(4) 若A为非空集，则A⊆A∪A成立。 ",
+      "answer": "（2）",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 27,
+      "content": "Ａ，Ｂ，Ｃ是三个集合，则下列哪几个推理正确：(1) A⊆B，B⊆C=> A⊆C (2) A⊆B，B⊆C=> A∈B (3) A∈B，B∈C=> A∈C ",
+      "answer": "（1）",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 28,
+      "content": "设Ａ＝｛1,2,3,4,5,6｝，B={1,2,3}，从Ａ到B的关系Ｒ＝｛〈x,y〉|x=y²｝，求(1)R (2) R⁻¹ 。 ",
+      "answer": "（1）R={<1,1>,<4,2>}  (2) R⁻¹={<1,1>,<2,4>}",
+      "sectionId": 15
+    },
+    {
+      "questionNumber": 29,
+      "content": "举出集合A上的既是等价关系又是偏序关系的一个例子。( ) ",
+      "answer": "A上的恒等关系",
+      "sectionId": 20
+    },
+    {
+      "questionNumber": 30,
+      "content": "集合A上的等价关系的三个性质是什么？( ) ",
+      "answer": "自反性，对称性和传递性",
+      "sectionId": 20
+    },
+    {
+      "questionNumber": 31,
+      "content": "集合A上的偏序关系的三个性质是什么？( ) ",
+      "answer": "自反性，反对称性和传递性",
+      "sectionId": 21
+    },
+    {
+      "questionNumber": 32,
+      "content": "设S={１,２,３,４}，Ａ上的关系Ｒ＝｛〈1,2〉，〈2,1〉，〈2,3〉，〈3,4〉｝求(1)R∘R (2) R⁻¹ 。 ",
+      "answer": "R∘R ={〈1,1〉，〈1,3〉，〈2,2〉，〈2,4〉} R⁻¹ =｛〈2,1〉，〈1,2〉，〈3,2〉，〈4,3〉｝",
+      "sectionId": 17
+    },
+    {
+      "questionNumber": 33,
+      "content": "设Ａ＝｛1，2，3，4，5，6｝，Ｒ是A上的整除关系，求R= {( )}。 ",
+      "answer": "R={<1,1>,<2,2>,<3,3>,<4,4>,<5,5>,<6,6>,<1,2>,<1,3>,<1,4>,<1,5>,<1,6>,<2,4>,<2,6>,<3,6>}",
+      "sectionId": 16
+    },
+    {
+      "questionNumber": 34,
+      "content": "设Ａ＝｛1,2,3,4,5,6｝，B={1,2,3}，从Ａ到B的关系Ｒ＝｛〈x,y〉|x=2y｝，求(1)R (2) R⁻¹  。 ",
+      "answer": "（1）R={<2,1>,<4,2>,<6,3>}  (2) R⁻¹={<1,2>,<2,4>,<3,6>}",
+      "sectionId": 15
+    },
+    {
+      "questionNumber": 35,
+      "content": "设Ａ＝｛1,2,3,4,5,6｝，B={1,2,3}，从Ａ到B的关系Ｒ＝｛〈x,y〉|x=y²｝，求R和R⁻¹的关系矩阵。 ",
+      "answer": "R的关系矩阵=（6行3列，仅(1,1)，(4,2)位置为1，其余为0）  R⁻¹的关系矩阵=（3行6列，仅(1,1)，(2,4)位置为1，其余为0）",
+      "sectionId": 16
+    },
+    {
+      "questionNumber": 36,
+      "content": "集合A={1,2,…,10}上的关系R={<x,y>|x+y=10,x,y∈A}，则R 的性质为（ ）。(1) 自反的　(2) 对称的　 (3) 传递的，对称的 (4) 传递的 ",
+      "answer": "（2）",
+      "sectionId": 16
+    },
+    {
+      "questionNumber": 37,
+      "content": "设A={2,4,6}，A上的二元运算定义为：ab=max{a,b}，则在独异点<A,*>中，单位元是( )，零元是( )。 ",
+      "answer": "2，6",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 38,
+      "content": "设A={3,6,9}，A上的二元运算定义为：ab=min{a,b}，则在独异点<A,*>中，单位元是( )，零元是( )； ",
+      "answer": "9，3",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 39,
+      "content": "设〈G,〉是一个群，则(1) 若a,b,x∈G，ax=b，则x=( )；(2) 若a,b,x∈G，ax=ab，则x=( )。 ",
+      "answer": " （1）a⁻¹*b   （2） b",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 40,
+      "content": "设a是12阶群的生成元， 则a²是( )阶元素，a³是( )阶元素。 ",
+      "answer": " 6,4",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 41,
+      "content": "代数系统<G,*>是一个群，则G的等幂元是( )。 ",
+      "answer": "单位元",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 42,
+      "content": "设a是10阶群的生成元， 则a⁴是( )阶元素，a³是( )阶元素。 ",
+      "answer": "5，10",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 43,
+      "content": "群<G,*>的等幂元是( )，有( )个。 ",
+      "answer": "单位元，1",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 44,
+      "content": "素数阶群一定是( )群, 它的生成元是( )。 ",
+      "answer": "循环群，任一非单位元",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 45,
+      "content": "设〈G,〉是一个群，a,b,c∈G，则(1) 若ca=b，则c=( )；(2) 若ca=ba，则c=( )。 ",
+      "answer": "（1）b*a⁻¹   (2)  b",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 46,
+      "content": "<H,,⁻¹>是<G,,⁻¹>的子群的充分必要条件是( )。 ",
+      "answer": "<H,,⁻¹>是群 或 (∀a，b∈G，ab⁻¹∈H 或(∀a,b∈G，a*b⁻¹∈H",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 47,
+      "content": "群＜A,*＞的等幂元有( )个，是( )，零元有( )个。 ",
+      "answer": "1，单位元，0",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 48,
+      "content": "在一个群〈G,*〉中，若G中的元素a的阶是k，则a⁻¹的阶是( )。 ",
+      "answer": "k",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 49,
+      "content": "在自然数集N上，下列哪种运算是可结合的？（ ） (1) ab=a-b　(2) ab=max{a,b}　(3) ab=a+2b　(4) ab=|a-b| ",
+      "answer": "（2）",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 50,
+      "content": "任意一个具有2个或以上元的半群，它（ ）。(1) 不可能是群　(2) 不一定是群　(3) 一定是群    　(4) 是交换群 ",
+      "answer": "（1）",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 51,
+      "content": "6阶有限群的任何子群一定不是（ ）。(1) 2阶　(2) 3 阶    (3) 4 阶  　(4) 6 阶 ",
+      "answer": "（3）",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 52,
+      "content": "下列哪个偏序集构成有界格（ ）(1) （N,≤）　(2) （Z,≤）   (3) （{2,3,4,6,12},|（整除关系））  　(4) (P(A),⊆) ",
+      "answer": "（4）",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 53,
+      "content": "有限布尔代数的元素的个数一定等于（ ）。(1) 偶数　(2) 奇数  (3) 4的倍数  　(4) 2的正整数次幂 ",
+      "answer": "（4）",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 54,
+      "content": "设G是一个哈密尔顿图，则G一定是( )。(1) 欧拉图  (2) 树 　(3) 平面图   (4)　连通图   ",
+      "answer": "（4）",
+      "sectionId": 38
+    },
+    {
+      "questionNumber": 55,
+      "content": "下面给出的集合中，哪一个是前缀码？( )(1) {0，10，110，101111}　(2) {01，001，000，1}(3) {b，c，aa，ab，aba}　(4) {1，11，101，001，0011} ",
+      "answer": "（2）",
+      "sectionId": 42
+    },
+    {
+      "questionNumber": 56,
+      "content": "一个图的哈密尔顿路是一条通过图中( )的路。 ",
+      "answer": "所有结点一次且恰好一次",
+      "sectionId": 38
+    },
+    {
+      "questionNumber": 57,
+      "content": "在有向图中，结点v的出度deg+(v)表示( )，入度deg-(v)表示( )。 ",
+      "answer": "以v为起点的边的条数， 以v为终点的边的条数",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 58,
+      "content": "设G是一棵树，则G 的生成树有( )棵。(1) 0　(2) 1　(3) 2　(4) 不能确定 ",
+      "answer": "1",
+      "sectionId": 41
+    },
+    {
+      "questionNumber": 59,
+      "content": "n阶无向完全图Kn 的边数是( )，每个结点的度数是( )。 ",
+      "answer": "n(n-1)/2, n-1",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 60,
+      "content": "一棵无向树的顶点数n与边数m关系是( )。 ",
+      "answer": "m=n-1",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 61,
+      "content": "一个图的欧拉回路是一条通过图中( )的回路。 ",
+      "answer": "所有边一次且恰好一次",
+      "sectionId": 38
+    },
+    {
+      "questionNumber": 62,
+      "content": "有n个结点的树，其结点度数之和是( )。 ",
+      "answer": "2n-2",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 63,
+      "content": "下面给出的集合中，哪一个不是前缀码( )。(1) {a，ab，110，a1b11}   (2) {01，001，000，1}(3) {1，2，00，01，0210}  (4) {12，11，101，002，0011} ",
+      "answer": "（1）",
+      "sectionId": 42
+    },
+    {
+      "questionNumber": 64,
+      "content": "n个结点的有向完全图边数是( )，每个结点的度数是( )。 ",
+      "answer": "n(n-1),2n-2",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 65,
+      "content": "一个无向图有生成树的充分必要条件是( )。 ",
+      "answer": "它是连通图",
+      "sectionId": 41
+    },
+    {
+      "questionNumber": 66,
+      "content": "设G是一棵树，n,m分别表示顶点数和边数，则(1) n=m (2) m=n+1 (3) n=m+1 (4) 不能确定。 ",
+      "answer": "（3）",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 67,
+      "content": "设T=〈V,E〉是一棵树，若|V|>1，则T中至少存在( )片树叶。 ",
+      "answer": "2",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 68,
+      "content": "任何连通无向图G至少有( )棵生成树，当且仅当G 是( )，G的生成树只有一棵。 ",
+      "answer": "1，树",
+      "sectionId": 41
+    },
+    {
+      "questionNumber": 69,
+      "content": "设G是有n个结点m条边的连通平面图，且有k个面，则k等于:(1) m-n+2 (2) n-m-2 (3) n+m-2 (4) m+n+2。 ",
+      "answer": "（1）",
+      "sectionId": 44
+    },
+    {
+      "questionNumber": 70,
+      "content": "设T是一棵树，则T是一个连通且( )图。 ",
+      "answer": "无简单回路",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 71,
+      "content": "设无向图G有16条边且每个顶点的度数都是2，则图G有( )个顶点。(1) 10   (2) 4   (3) 8  (4) 16 ",
+      "answer": "（4）",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 72,
+      "content": "设无向图G有18条边且每个顶点的度数都是3，则图G有( )个顶点。 (1) 10   (2) 4   (3) 8  (4) 12 ",
+      "answer": "（4）",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 73,
+      "content": "设图G=<V，E>，V={a，b，c，d，e}，E={<a,b>,<a,c>,<b,c>,<c,d>,<d,e>},则G是有向图还是无向图？ ",
+      "answer": "有向图",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 74,
+      "content": "任一有向图中，度数为奇数的结点有( )个。 ",
+      "answer": "偶数",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 75,
+      "content": "具有6 个顶点，12条边的连通简单平面图中，每个面都是由( )条边围成？(1) 2　(2) 4　(3)  3　(4) 5 ",
+      "answer": "（3）",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 76,
+      "content": "在有n个顶点的连通图中，其边数（ ）。(1) 最多有n-1条　(2) 至少有n-1 条(3) 最多有n条  　(4) 至少有n 条 ",
+      "answer": "（2）",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 77,
+      "content": "一棵树有2个2度顶点，1 个3度顶点，3个4度顶点，则其1度顶点为（ ）。(1) 5　(2) 7    (3) 8  　(4) 9 ",
+      "answer": "（4）",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 78,
+      "content": "若一棵完全二元（叉）树有2n-1个顶点，则它（ ）片树叶。(1) n　(2) 2n    (3) n-1  　(4) 2 ",
+      "answer": "（1）",
+      "sectionId": 42
+    },
+    {
+      "questionNumber": 79,
+      "content": "下列哪一种图不一定是树（ ）。(1) 无简单回路的连通图　(2) 有n个顶点n-1条边的连通图    (3) 每对顶点间都有通路的图 　(4) 连通但删去一条边便不连通的图 ",
+      "answer": "（3）",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 80,
+      "content": "连通图G是一棵树当且仅当G中（ ）。(1) 有些边是割边　(2) 每条边都是割边(3) 所有边都不是割边 　(4) 图中存在一条欧拉路径 ",
+      "answer": "（2）",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 81,
+      "content": "求公式的主析取范式和主合取范式：(P→Q)∧R ",
+      "answer": "(P→Q)∧R ⇔ (¬P∨Q)∧R ⇔ (¬P∧R)∨(Q∧R)（析取范式）⇔ (¬P∧(Q∨¬Q)∧R)∨((¬P∨P)∧Q∧R) ⇔ (¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(¬P∧Q∧R)∨(P∧Q∧R) ⇔ (¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(P∧Q∧R)（主析取范式）¬((P→Q)∧R) ⇔ (¬P∧¬Q∧¬R)∨(¬P∧Q∧¬R)∨(P∧¬Q∧R)∨(P∧Q∧¬R)∨(P∧¬Q∧¬R)（原公式否定的主析取范式）(P→Q)∧R ⇔ (P∨Q∨R)∧(P∨¬Q∨R)∧(¬P∨Q∨¬R)∧(¬P∨¬Q∨R)∧(¬P∨Q∨R)（主合取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 82,
+      "content": "求公式的主析取范式和主合取范式：(P∧R)∨(Q∧R)∨¬P ",
+      "answer": "(P∧R)∨(Q∧R)∨¬P（析取范式）⇔ (P∧(Q∨¬Q)∧R)∨((P∨¬P)∧Q∧R)∨(¬P∧(Q∨¬Q)∧(R∨¬R)) ⇔ (P∧Q∧R)∨(P∧¬Q∧R)∨(P∧Q∧R)∨(¬P∧Q∧R)∨(¬P∧Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(¬P∧¬Q∧¬R) ⇔ (P∧Q∧R)∨(P∧¬Q∧R)∨(¬P∧Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(¬P∧¬Q∧¬R)(主析取范式)¬((P∧R)∨(Q∧R)∨¬P) ⇔ (P∧¬Q∧¬R)∨(P∧Q∧¬R)（原公式否定的主析取范式）(P∧R)∨(Q∧R)∨¬P ⇔ (¬P∨Q∨R)∧(¬P∨¬Q∨R)（主合取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 83,
+      "content": "求公式的主析取范式和主合取范式：(¬P→Q)∧(R∨P) ",
+      "answer": "(¬P→Q)∧(R∨P) ⇔ (P∨Q)∧(R∨P)（合取范式）⇔ (P∨Q∨(R∧¬R))∧(P∨(Q∧¬Q)∨R) ⇔ (P∨Q∨R)∨(P∨Q∨¬R)∨(P∨Q∨R)∨(P∨¬Q∨R) ⇔ (P∨Q∨R)∨(P∨Q∨¬R)∨(P∨¬Q∨R)（主合取范式）¬((¬P→Q)∧(R∨P)) ⇔ (P∧¬Q∧¬R)∨(¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧¬R)（原公式否定的主合取范式）(¬P→Q)∧(R∨P) ⇔ (¬P∧Q∧R)∨(P∧¬Q∧¬R)∨(P∧Q∧¬R)∨(P∧¬Q∧R)∨(P∧Q∧R)（主析取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 84,
+      "content": "求公式的主析取范式和主合取范式：Q→(P∨¬R) ",
+      "answer": "Q→(P∨¬R) ⇔ ¬Q∨P∨¬R（主合取范式）¬(Q→(P∨¬R)) ⇔ (¬P∧¬Q∧¬R)∨(¬P∧¬Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧Q∧R)∨(P∧¬Q∧R)∨(P∧Q∧¬R)∨(P∧Q∧R)（原公式否定的主合取范式）Q→(P∨¬R) ⇔ (P∧Q∧R)∨(P∧Q∧¬R)∨(P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(¬P∧¬Q∧¬R)（主析取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 85,
+      "content": "求公式的主析取范式和主合取范式：P→(P∨(Q→P)) ",
+      "answer": "P→(P∨(Q→P)) ⇔ ¬P∨(P∨(¬Q∨P)) ⇔ ¬P∨P ⇔ T(主合取范式) ⇔ (¬P∧¬Q)∨(¬P∧Q)∨(P∧¬Q)∨(P∧Q)（主析取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 86,
+      "content": "求公式的主析取范式和主合取范式：¬(P→Q)∨(R∨P) ",
+      "answer": "¬(P→Q)∨(R∨P) ⇔ ¬(¬P∨Q)∨(R∨P) ⇔ (P∧¬Q)∨(R∨P)（析取范式）⇔ (P∧¬Q∧(R∨¬R))∨(P∧(¬Q∨Q)∨R) ⇔ (P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(P∧¬Q∧R)∨(P∧Q∧R) ⇔ (P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(P∧Q∧R)（主析取范式）¬(¬(P→Q)∨(R∨P)) ⇔ (P∧Q∧¬R)∨(¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(¬P∧¬Q∧¬R)∨(¬P∧Q∧¬R)（原公式否定的主析取范式）¬(P→Q)∨(R∨P) ⇔ (¬P∨¬Q∨R)∧(P∨¬Q∨¬R)∧(P∨Q∨¬R)∧(P∨Q∨R)∧(P∨¬Q∨R)（主合取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 87,
+      "content": "求公式的主析取范式和主合取范式：P∨(P→Q) ",
+      "answer": "P∨(P→Q) ⇔ P∨(¬P∨Q) ⇔ (P∨¬P)∨Q ⇔ T(主合取范式) ⇔ (¬P∧¬Q)∨(¬P∧Q)∨(P∧¬Q)∨(P∧Q)（主析取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 88,
+      "content": "求公式的主析取范式和主合取范式：(R→Q)∧P ",
+      "answer": "(R→Q)∧P ⇔ (¬R∨Q)∧P ⇔ (¬R∧P)∨(Q∧P)（析取范式）⇔ (¬R∧(Q∨¬Q)∧P)∨((¬R∨R)∧Q∧P) ⇔ (¬R∧Q∧P)∨(¬R∧¬Q∧P)∨(¬R∧Q∧P)∨(R∧Q∧P) ⇔ (P∧Q∧¬R)∨(P∧¬Q∧¬R)∨(P∧Q∧R)（主析取范式）¬((R→Q)∧P) ⇔ (¬P∧¬Q∧¬R)∨(¬P∧Q∧¬R)∨(P∧¬Q∧R)∨(¬P∧Q∧R)∨(¬P∧¬Q∧R)（原公式否定的主析取范式）(R→Q)∧P ⇔ (P∨Q∨R)∧(P∨¬Q∨R)∧(¬P∨Q∨¬R)∧(P∨¬Q∨¬R)∧(P∨Q∨¬R)（主合取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 89,
+      "content": "求公式的主析取范式和主合取范式：P→Q ",
+      "answer": "P→Q ⇔ ¬P∨Q（主合取范式）⇔ (¬P∧(Q∨¬Q))∨((¬P∨P)∧Q) ⇔ (¬P∧Q)∨(¬P∧¬Q)∨(¬P∧Q)∨(P∧Q) ⇔ (¬P∧Q)∨(¬P∧¬Q)∨(P∧Q)（主析取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 90,
+      "content": "求公式的主析取范式和主合取范式：P∨¬Q ",
+      "answer": "P∨¬Q（主合取范式）⇔ (P∧(¬Q∨Q))∨((¬P∨P)∧¬Q) ⇔ (P∧¬Q)∨(P∧Q)∨(¬P∧¬Q)∨(P∧¬Q) ⇔ (P∧¬Q)∨(P∧Q)∨(¬P∧¬Q)（主析取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 91,
+      "content": "求公式的主析取范式和主合取范式：P∧Q ",
+      "answer": "P∧Q（主析取范式）⇔ (P∧(Q∨¬Q))∨((P∨¬P)∧Q) ⇔ (P∧¬Q)∨(P∧Q)∨(P∧Q)∨(¬P∧Q) ⇔ (P∧¬Q)∨(P∧Q)∨(¬P∧Q)（主合取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 92,
+      "content": "求公式的主析取范式和主合取范式：（P∧R）→Q ",
+      "answer": "（P∧R）→Q ⇔ ¬(P∧R)∨Q ⇔ (¬P∨¬R)∨Q ⇔ (¬P∨Q)∨(¬R∨Q)（合取范式）⇔ (¬P∨Q∨(R∧¬R))∨((¬P∨P)∨Q∨¬R) ⇔ (¬P∨Q∨R)∨(¬P∨Q∨¬R)∨(¬P∨Q∨¬R)∨(P∨Q∨¬R) ⇔ (¬P∨Q∨R)∨(¬P∨Q∨¬R)∨(¬P∨Q∨¬R)∨(P∨Q∨¬R) ⇔ (¬P∨Q∨R)∨(¬P∨Q∨¬R)∨(P∨Q∨¬R)（主合取范式）¬（P∧R）→Q ⇔ (¬P∧¬Q∧R)∨(¬P∧¬Q∧¬R)∨(P∧Q∧R)∨(P∧¬Q∧R)∨(P∧¬Q∧¬R)（原公式否定的主析取范式）（P∧R）→Q ⇔ (P∨Q∨¬R)∨(P∨Q∨R)∨(¬P∨¬Q∨¬R)∨(¬P∨Q∨¬R)∨(¬P∨Q∨R)（主析取范式）",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 93,
+      "content": "求公式的主析取范式和主合取范式：（P∨Q）→R ",
+      "answer": "（P∨Q）→R ⇔ ¬(¬P∨Q)∨R ⇔ (P∧¬Q)∨R(析取范式) ⇔ (P∧¬Q∧(R∨R))∨((P∨P)∧(Q∨Q)∨R) ⇔ (P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(P∧Q∧R)∨(P∧¬Q∧R)∨(¬P∧Q∧R)∨(¬P∧¬Q∧R) ⇔ (P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(P∧Q∧R)∨(¬P∧Q∧R)∨(¬P∧¬Q∧R)(主析取范式）（P∨Q）→R ⇔ ¬(¬P∨Q)∨R ⇔ (P∧¬Q)∨R(析取范式) ⇔ (P∨R)∧(¬Q∨R)(合取范式) ⇔ (P∨(Q∨¬Q)∨R)∨((P∨¬P)∨¬Q∨R) ⇔ (P∨Q∨R)∨(P∨¬Q∨R)∨(P∨¬Q∨R)∨(¬P∨¬Q∨R) ⇔ (P∨Q∨R)∨(P∨¬Q∨R)∨(¬P∨¬Q∨R)(主合取范式)",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 94,
+      "content": "求公式的主析取范式和主合取范式：(P∨(Q∧R))↔(¬P∨(¬Q∨¬R)) ",
+      "answer": "(P∨(Q∧R))↔(¬P∨(¬Q∨¬R)) ⇔ (¬P∧(Q∧R))∨(P∧(¬Q∨¬R)) ⇔ (¬P∧Q)∨(¬P∧R)∨(P∧¬Q)∨(P∧¬R)（合取范式）⇔ (¬P∧Q∨(R∧¬R))∨(¬P∧(Q∨¬Q)∨R)∨(P∧¬Q∨(R∧¬R))∨(P∧(Q∨¬Q)∨¬R) ⇔ (¬P∧Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(P∧Q∧¬R)∨(P∧¬Q∧¬R) ⇔ (¬P∧Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(P∧¬Q∧R)∨(P∨Q∨¬R)∨(P∧¬Q∧¬R)(主合取范式)¬(P∨(Q∧R))↔(¬P∨(¬Q∨¬R)) ⇔ (¬P∧¬Q∧¬R)∨(P∧Q∧R)(原公式否定的主合取范式)(P∨(Q∧R))↔(¬P∨(¬Q∨¬R)) ⇔ (P∧Q∧R)∨(¬P∧¬Q∧¬R)(主析取范式)",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 95,
+      "content": "求公式的主析取范式和主合取范式：P∨(¬P∨(Q∨(¬Q∨R))) ",
+      "answer": "P∨(¬P∨(Q∨(¬Q∨R))) ⇔ P∨(P∨(Q∨(Q∨R))) ⇔ P∨Q∨R(主合取范式)¬(P∨Q∨R) ⇔ (P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(P∧Q∧¬R)∨(¬P∧Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(¬P∧¬Q∧¬R)(原公式否定的主合取范式)¬(P∨Q∨R) ⇔ (¬P∧Q∧¬R)∨(¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(P∧¬Q∧¬R)∨(P∧¬Q∧R)∨(P∧Q∧¬R)∨(P∧Q∧R)(主析取范式)",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 96,
+      "content": "求公式的主析取范式和主合取范式：(P∨Q)∨(P∨R) ",
+      "answer": "(P∨Q)∨(P∨R) ⇔ (¬P∧Q)∨(¬P∧R)(合取范式) ⇔ (¬P∧Q∨(R∧¬R))∨(¬P∧(¬Q∨Q)∨R) ⇔ (¬P∧Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(¬P∧Q∧R) ⇔ (¬P∧Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)(主合取范式)(P∨Q)∨(P∨R) ⇔ (¬P∧Q)∨(¬P∧R) ⇔ ¬P∨(Q∧R)(合取范式) ⇔ (¬P∧(Q∨¬Q)∧(R∨¬R))∨((¬P∨P)∧Q∧R) ⇔ (¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(¬P∧Q∧R)∨(P∧Q∧R) ⇔ (¬P∧Q∧R)∨(¬P∧¬Q∧R)∨(¬P∧Q∧¬R)∨(¬P∧¬Q∧R)∨(P∧Q∧R)(主析取范式)",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 97,
+      "content": "证明：P→Q，¬Q∨R，¬R，¬S∨P⇒¬S ",
+      "answer": "(1) ¬R 前提 (2) ¬Q∨R 前提 (3) ¬Q （1），（2） (4) P→Q 前提 (5) ¬P （3），（4） (6) ¬S∨P 前提 (7) ¬S （5），（6）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 98,
+      "content": "证明：A→(B→C)，C→(¬D∨E)，¬F→(D∧¬E)，A⇒B→F ",
+      "answer": "(1) A 前提 (2) A→(B→C) 前提 (3) B→C （1），（2） (4) B 附加前提 (5) C （3），（4） (6) C→(¬D∨E) 前提 (7) ¬D∨E （5），（6） (8) ¬F→(D∧¬E) 前提 (9) F （7），（8） (10) B→F CP",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 99,
+      "content": "证明：P∨Q，P→R，Q→S ⇒ R∨S ",
+      "answer": "(1) ¬R 附加前提 (2) P→R 前提 (3) ¬P （1），（2） (4) P∨Q 前提 (5) Q （3），（4） (6) Q→S 前提 (7) S （5），（6） (8) R∨S CP，（1），（8）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 100,
+      "content": "证明：(P→Q)∧(R→S)，(Q→W)∧(S→X)，¬(W∧X)，P→R ⇒ ¬P ",
+      "answer": "（1） P 假设前提 （2） P→R 前提 （3） R （1），（2） （4） (P→Q)∧(R→S) 前提 （5） P→Q （4） （6） R→S （5） （7） Q （1），（5） （8） S （3），（6） （9） (Q→W)∧(S→X) 前提 （10） Q→W （9） （11） S→X （10） （12） W （7），（10） （13） X （8），（11） （14） W∧X （12），（13） （15） ¬(W∧X) 前提 （16） ¬(W∧X)∧(W∧X) （14），（15）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 101,
+      "content": "证明：(U∨V)→(M∧N)，U∨P，P→(Q∧S)，¬Q∨¬S ⇒M ",
+      "answer": "(1) ¬Q∨¬S 附加前提 (2) P→(Q∧S) 前提 (3) ¬P （1），（2） (4) U∨P 前提 (5) U （3），（4） (6) U∨V （5） (7) (U∨V)→(M∧N) 前提 (8) M∧N (6),(7) (9) M （8）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 102,
+      "content": "证明：¬B∨D，(E→¬F)→¬D，¬E⇒¬B ",
+      "answer": "(1) B 附加前提 (2) ¬B∨D 前提 (3) D （1），（2） (4) (E→¬F)→¬D 前提 (5) ¬(E→¬F) （3），（4） (6) E∧¬F （5） (7) E （6） (8) ¬E 前提 (9) E∧¬E （7），（8）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 103,
+      "content": "证明：P→(Q→R)，R→(Q→S) ⇒ P→(Q→S) ",
+      "answer": "（1） P 附加前提 （2） Q 附加前提 （3） P→(Q→R) 前提 （4） Q→R （1），（3） （5） R （2），（4） （6） R→(Q→S) 前提 （7） Q→S （5），（6） （8） S （2），（7） （9） Q→S CP，（2），（8） （10） P→(Q→S) CP，（1），（9）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 104,
+      "content": "证明：P→¬Q，¬P→R，R→¬S ⇒S→¬Q ",
+      "answer": "（1） S 附加前提 （2） R→¬S 前提 （3） ¬R （1），（2） （4） ¬P→R 前提 （5） P （3），（4） （6） P→¬Q 前提 （7） ¬Q (5），（6） （8） S→¬Q CP，（1），（7）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 105,
+      "content": "证明：P→(Q→R) ⇒ (P→Q)→(P→R) ",
+      "answer": "(1) P→Q 附加前提 (2) P 附加前提 (3) Q (1),(2) (4) P→(Q→R) 前提 (5) Q→R (2),(4) (6) R (3),(5) (7) P→R CP,(2),(6) (8) (P→Q) →(P→R) CP,(1),(7)",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 106,
+      "content": "证明：P→(¬Q→¬R)，Q→¬P，S→R，P ⇒¬S ",
+      "answer": "（1） P 前提 （2） P→(¬Q→¬R) 前提 （3） ¬Q→¬R (1)，(2) （4） Q→¬P 前提 （5） ¬Q (1)，(4) （6） ¬R (3),(5) （7） S→R 前提 （8） ¬S (6)，(7)",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 107,
+      "content": "证明：A，A→B，A→C，B→(D→¬C) ⇒ ¬D ",
+      "answer": "（1） A 前提 （2） A→B 前提 （3） B (1)，(2) （4） A→C 前提 （5） C (1)，(4) （6） B→(D→¬C) 前提 （7） D→¬C (3)，(6) （8） ¬D (5)，(7)",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 108,
+      "content": "证明：A→(C∨B)，B→¬A，D→¬C ⇒ A→¬D ",
+      "answer": "（1） A 附加前提 (2) A→(C∨B) 前提 (3) C∨B （1），（2） (4) B→¬A 前提 (5) ¬B （1），（4） (6) C （3），（5） (7) D→¬C 前提 (8) ¬D （6），（7） (9) A→¬D CP，（1），（8）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 109,
+      "content": "证明：(P∨Q)∧(R∨Q) ⇔（P∧R）∨Q ",
+      "answer": "(P∨Q)∧(R∨Q) ⇔(¬P∨Q)∧(¬R∨Q) ⇔(¬P∧¬R)∨Q ⇔¬（P∧R）∨Q ⇔(P∧R)∨Q",
+      "sectionId": 3
+    },
+    {
+      "questionNumber": 110,
+      "content": "证明：P∨(Q∨P)⇔¬P∨(P∨¬Q) ",
+      "answer": "P∨(Q∨P)⇔¬P∨(¬Q∨P)⇔¬(¬P)∨(¬P∨¬Q)⇔¬P∨(P∨¬Q)",
+      "sectionId": 3
+    },
+    {
+      "questionNumber": 111,
+      "content": "证明：（P∨Q）∧（P∨R），¬(Q∧R)，S→P⇒S ",
+      "answer": "(1) （P∨Q）∧（P∨R） 前提 （2） P∨(Q∧R) (1) （3） ¬(Q∧R) 前提 （4） ¬P （2），(3) (5) S→P 前提 (6) S (4),(5)",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 112,
+      "content": "证明：P∨¬Q，Q∨¬R，R∨¬S⇒ ¬P ",
+      "answer": "(1) P 附加前提 （2） P∨¬Q 前提 （3） ¬Q （1），（2） （4） Q∨¬R 前提 (5) ¬R （3），（4） (6 ) R∨¬S 前提 （7） R （6） （8） R∧¬R （5），（7）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 113,
+      "content": "证明：用真值表法证明Ｐ↔Ｑ⇔ (Ｐ→Ｑ)∧(Ｑ→Ｐ) ",
+      "answer": "列出两个公式的真值表：|P Q|Ｐ↔Ｑ （Ｐ→Ｑ）∧（Ｑ→Ｐ）|F F|T T|F T|F F|T F|F F|T T|T T|由定义可知，这两个公式是等价的。",
+      "sectionId": 2
+    },
+    {
+      "questionNumber": 114,
+      "content": "证明：P→Q⇔P→(P∧Q) ",
+      "answer": "设P→(P∧Q)为F，则P为T，P∧Q为F。所以P为T，Q为F ，从而P→Q也为F。所以P→Q⇔P→(P∧Q)。",
+      "sectionId": 3
+    },
+    {
+      "questionNumber": 115,
+      "content": "证明：用先求主范式的方法证明(P→Q)∧(P→R) ⇔ (P→（Q∧R） ",
+      "answer": "先求出左右两个公式 的主合取范式 (P→Q)∧(P→R) ⇔(¬P∨Q)∧(¬P∨R) ⇔(¬P∨Q∨(R∨¬R)))∧(¬P∨(Q∨¬Q)∨R) ⇔(¬P∨Q∨R)∧(¬P∨Q∨¬R)∧(¬P∨Q∨R)∧(¬P∨¬Q∨R) ⇔ (¬P∨Q∨¬R)∧(¬P∨Q∨R)∧(¬P∨¬Q∨R) (P→（Q∧R）) ⇔(¬P∨（Q∧R）) ⇔(¬P∨Q)∧(¬P∨R) ⇔(¬P∨Q∨(R∨¬R)))∧(¬P∨(Q∨¬Q)∨R) ⇔(¬P∨Q∨R)∧(¬P∨Q∨¬R)∧(¬P∨Q∨R)∧(¬P∨¬Q∨R) ⇔ (¬P∨Q∨¬R)∧(¬P∨Q∨R)∧(¬P∨¬Q∨R) 它们有一样的主合取范式，所以它们等价。",
+      "sectionId": 4
+    },
+    {
+      "questionNumber": 116,
+      "content": "证明：(P→Q)∧¬(Q∧R) ⇔¬P ",
+      "answer": "设(P→Q)∧¬(Q∧R)为T，则P→Q和¬(Q∧R)都为T。即P→Q和¬Q∨¬R都为T。故P→Q，¬Q和¬R)都为T，即P→Q为T，Q和R都为F。从而P也为F，即¬P为T。从而(P→Q)∧¬(Q∧R) ⇔¬P",
+      "sectionId": 3
+    },
+    {
+      "questionNumber": 117,
+      "content": "为庆祝九七香港回归祖国，四支足球队进行比赛，已知情况如下，问结论是否有效? 前提: (1) 若A队得第一，则B队或C队获亚军;(2)若C队获亚军，则A队不能获冠军;(3)若D队获亚军，则B队不能获亚军;(4)A 队获第一; 结论: (5) D队不是亚军。 ",
+      "answer": "设A：A队得第一;B: B队获亚军;C: C队获亚军;D: D队获亚军;则前提符号化为A→（B∨C），C→¬A，D→¬B，A；结论符号化为 ¬D。本题即证明 A→（B∨C），C→¬A，D→¬B，A⇒¬D。（1） A 前提 （2） A→（B∨C）前提 （3） B∨C （1），（2） （4） C→¬A 前提 （5） ¬C （1），（4） （6） B （3），（5） （7） D→¬B 前提 （8） ¬D （6），（7）",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 118,
+      "content": "用推理规则证明P∨Q, ¬(Q∨R),P∧R不能同时为真。 ",
+      "answer": "(1) P∧R 前提 (2) P (1) (3) P∨Q 前提 (4) Q (2),(3) (5) ¬(Q∨R) 前提 (6) ¬Q∧R (5) (7) ¬Q (6) (8) ¬Q∧Q (4),(7)",
+      "sectionId": 7
+    },
+    {
+      "questionNumber": 119,
+      "content": "证明：A∩(B－C)＝(A∩B)－(A∩C) ",
+      "answer": "(A∩B)－(A∩C)= (A∩B) ∩¬(A∩C)=(A∩B) ∩（¬A∨¬C）=(A∩B∩¬A)∨(A∩B∩¬C)= A∩B∩¬C=A∩（B∩¬C）=A∩（B-C）",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 120,
+      "content": "证明：(A－B)∪(A－C)=A－(B∩C) ",
+      "answer": "(A-B)∪(A-C)=(A∩¬B)∪(A∩¬C) =A∩(¬B∪¬C)=A∩¬(B∩C)= A-(B∩C)",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 121,
+      "content": "证明：A∪B=A∪C，A∩B=A∩C，则C=B ",
+      "answer": "B=B∪(A∩¬A)=(B∪¬A)∩(B∪A)=(C∪¬A)∩(C∪A)=C∪(A∩¬A)=C",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 122,
+      "content": "证明：A∪B=A∪(B-A) ",
+      "answer": "A∪(B-A)=A∪(B∩¬A)=(A∪B)∩(A∪¬A)=(A∪B)∩U= A∪B",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 123,
+      "content": "证明：A=B ⇔ A⊕B=∅ ",
+      "answer": "设A=B，则A⊕B=（A-B）∪（B-A）=∅∪∅=∅。设A⊕B=∅，则A⊕B=（A-B）∪（B-A）=∅。故A-B=∅，B-A=∅，从而A⊆B，B⊆A，故A=B。",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 124,
+      "content": "证明：A∪B = A∪C，A∩B=A∩C，则C=B ",
+      "answer": "B=B∩(A∪B)= B∩(A∪C)= (B∩A)∪(B∩C)= (A∩C)∪(B∩C)= C∩(A∪B)= C∩(A∪C)=C",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 125,
+      "content": "证明：A∪B=A∪C，A∩B=A∩C，则C=B ",
+      "answer": "B=B∪(A∩¬A)=(B∩A)∪(B∪¬A)=(C∩A)∪(C∪¬A)=C∪(A∩¬A)=C",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 126,
+      "content": "证明：A－(B∪C)＝(A－B)－C ",
+      "answer": "A－(B∪C)= A∩¬(B∪C)=A∩(¬B∩¬C)=(A∩¬B)∩¬C=(A-B)∩¬C=(A-B)-C",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 127,
+      "content": "证明：(A－B)∪(A－C)=A－(B∩C) ",
+      "answer": "(A-B)∪(A－C)=(A∩¬B)∪(A∩¬C)=(A∩A)∩(¬B∪¬C)=A∩¬(B∩C)=A－(B∩C)",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 128,
+      "content": "证明：A-B=B，则A=B=∅ ",
+      "answer": "因为B=A-B，所以B=B∩B=（A-B）∩B=∅。从而A=A-B=B=∅。",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 129,
+      "content": "证明：A=(A-B)∪(A-C)⇔A∩B∩C=∅ ",
+      "answer": "因为(A-B)∪(A-C) =(A∩¬B)∪(A∩¬C) =A∩(¬B∪¬C)=A∩¬(B∩C)= A-(B∩C)，且A=(A-B)∪(A-C)，所以A= A-(B∩C)，故A∩B∩C=∅。因为A∩B∩C=∅，所以A-(B∩C)=A。而A-(B∩C)= (A-B)∪(A-C)，所以A=(A-B)∪(A-C)。",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 130,
+      "content": "证明：(A-B)∪(A-C)=∅⇔A⊆B∩C ",
+      "answer": "因为(A-B)∪(A-C) =(A∩¬B)∪(A∩¬C) =A∩(¬B∪¬C)=A∩¬(B∩C)= A-(B∩C)，且(A-B)∪(A-C)=∅，所以∅= A-(B∩C)，故A⊆B∩C。因为A⊆B∩C，所以A-(B∩C)=A。而A-(B∩C)= (A-B)∪(A-C)，所以A=(A-B)∪(A-C)。",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 131,
+      "content": "证明：(A-B)∪(B-A)=A ⇔ B=∅ ",
+      "answer": "因为(A-B)∪(B-A)=A，所以B-A⊆A。但(B-A)∩A=∅，故B-A=∅。即B⊆A，从而B=∅（否则A-B≠A，从而与(A-B)∪(B-A)=A矛盾）。因为B=∅，所以A-B=A且B-A=∅。从而(A-B)∪(B-A)=A。",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 132,
+      "content": "证明：(A-B)-C⊆A-(B-C) ",
+      "answer": "∀x∈(A-B)-C，有x∈A-B且x∉C，即x∈A，x∉B且x∉C。从而x∈A，x∉B-C，故x∈A-(B-C)。从而(A-B)-C⊆A-(B-C)",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 133,
+      "content": "证明：P(A)∪P(B)⊆P(A∪B) （P(S)表示S的幂集） ",
+      "answer": "∀S∈P(A)∪P(B)，有S∈P(A)或S∈P(B)，所以S⊆A或S⊆B。从而S⊆A∪B，故S∈P(A∪B)。即P(A)∪P(B)⊆P(A∪B)",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 134,
+      "content": "证明：P(A)∩P(B)=P(A∩B) （P(S)表示S的幂集） ",
+      "answer": "∀S∈P(A)∩P(B)，有S∈P(A)且S∈P(B)，所以S⊆A且S⊆B。从而S⊆A∩B，故S∈P(A∩B)。即P(A)∩P(B)⊆P(A∩B)。∀S∈P(A∩B)，有S⊆A∩B，所以S⊆A且S⊆B。从而S∈P(A)且S∈P(B)，故S∈P(A)∩P(B)。即P(A∩B)⊆P(A)∩P(B)。 故P(A∩B)=P(A)∩P(B)",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 135,
+      "content": "证明：（A-B）∪B=（A∪B）-B当且仅当B=∅。 ",
+      "answer": "当B=∅时，因为（A-B）∪B=（A-∅）∪∅=A，（A∪B）-B=（A∪∅）-∅ =A，所以（A-B）∪B=（A∪B）-B。用反证法证明。假设B≠∅，则存在b∈B。因为b∈B且b∈A∪B，所以b∉（A∪B）-B。而显然b∈（A-B）∪B。故这与已知（A-B）∪B=（A∪B）-B矛盾。",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 136,
+      "content": "设个体域是自然数，将下列各式翻译成自然语言：(1)∃x∀y（xy=1）;(2)∀x∃y(xy=1);(3)∀x∃y (xy=0);(4)∃x∀y（xy=0）;(5)∀x∃y (xy=x);(6)∃x∀y（xy=x）;(7)∀x∀y∃z (x-y=z)；",
+      "answer": "（1）存在自然数x，对任意自然数y满足xy=1;（2）对每个自然数x，存在自然数y满足xy=1;（3）对每个自然数x，存在自然数y满足xy=0;（4）存在自然数x，对任意自然数y满足xy=1;（5）对每个自然数x，存在自然数y满足xy=x;（6）存在自然数x，对任意自然数y满足xy=x;（7）对任意自然数x,y，存在自然数z满足x-y=z。",
+      "sectionId": 9
+    },
+    {
+      "questionNumber": 137,
+      "content": "设A(x,y,z): x+y=z, M（x,y,z）: xy=z, L(x,y): x<y, G(x,y): x>y， 个体域为自然数。将下列命题符号化：（1）没有小于0的自然数;（2）x<z是x<y且y<z的必要条件;（3）若x<y，则存在某些z，使z<0, xz>yz;（4）存在x，对任意y 使得xy=y;（5）对任意x，存在y使x+y=x。",
+      "answer": "（1）∀x（G(x,0)∨M（0,0,x））或¬∃x L(x,0)（2）∀x∀y∀z ((L(x,y)∧L(y,z))→L(x,z))（3）∀x∀y ((L(x,y)→∃z(L(z,0)∧G(xz,yz)))（4）∃x∀yM（x,y,y）（5）∀x∃yA(x,y,x)",
+      "sectionId": 9
+    },
+    {
+      "questionNumber": 138,
+      "content": "列出下列二元关系的所有元素：（1）A={0,1,2}，B={0,2,4}，R={<x,y>|x∈A,y∈B,x=y};（2）A={1,2,3,4,5}，B={1,2}，R={<x,y>|2≤x+y≤4且x∈A且y∈B};（3）A={1,2,3}，B={-3,-2,-1,0,1}，R={<x,y>||x|=|y|且x∈A且y∈B};；",
+      "answer": "(1) R={<0,0>,<0,2>,<2,0>,<2,2>}(2) R={<1,1>,<1,2>,<2,1>,<2,2>,<3,1>};(3) R={<1,1>,<1,-1>,<2,-2>,<3,-3>}。",
+      "sectionId": 15
+    },
+    {
+      "questionNumber": 139,
+      "content": "对任意集合A,B，证明：若A×A=B×B，则A=B。",
+      "answer": "若B=∅，则B×B=∅。从而A×A =∅。故A=∅。从而B=A。若B≠∅，则B×B≠∅。从而A×A≠∅。对∀x∈B, <x,x>∈B×B。因为A×A=B×B，则<x,x>∈A×A。从而x∈A。故B⊆A。同理可证，A⊆B。故B=A。",
+      "sectionId": 15
+    },
+    {
+      "questionNumber": 140,
+      "content": "对任意集合A,B，证明：若A≠∅，A×B=A×C，则B=C。",
+      "answer": "若B=∅，则A×B=∅。从而A×C =∅。因为A≠∅，所以C=∅。即B=C。若B≠∅，则A×B≠∅。从而A×C≠∅。对∀x∈B,因为A≠∅，所以存在y∈A, 使<y,x>∈A×B。因为A×B=A×C，则<y,x>∈A×C。从而x∈C。故B⊆C。同理可证，C⊆B。故B=C。",
+      "sectionId": 15
+    },
+    {
+      "questionNumber": 141,
+      "content": "设A={a,b}, B={c}。求下列集合：(1) A×{0,1}×B； (2) B²×A；(3) (A×B)²; (4) P(A)×A。",
+      "answer": "（1）A×{0,1}×B={<a,0,c>,<a,1,c>,<b,0,c>,<b,1,c>};（2）B²×A={<c,c,a>,<c,c,b>};（3）(A×B)²={<a,c,a,c>,<a,c,b,c>,<b,c,a,c>,<b,c,b,c>};（4）P(A)×A={<∅,a>,<∅,b>,<{a},a>,<{a},b>,<{b},a>,<{b},b>,<A,a>,<A,b>}。",
+      "sectionId": 15
+    },
+    {
+      "questionNumber": 142,
+      "content": "设全集U={a,b,c,d,e}, A={a,d}, B={a,b,c}, C={b,d}。求下列各集合：（1）A∩B∩¬C； （2）¬A∩¬B∩¬C；（3）(A∩¬B)∪C; （4）P(A)-P(B); （5）(A-B)∪(B-C); （6）(A∪B)∩C; ；",
+      "answer": "(1) A∩B∩¬C={a}; (2) ¬A∩¬B∩¬C={a,b,c,d,e};(3) （A∩¬B）∪C={b,d}; (4) P(A)-P(B)={{d},{a,d}};(5) (A-B)∪(B-C)={d,c,a}; (6) (A∪B) ∩C={b,d}。",
+      "sectionId": 14
+    },
+    {
+      "questionNumber": 143,
+      "content": "设A,B,C是任意集合，证明或否定下列断言：（1）若A⊆B，且B⊆C，则A⊆C；（2）若A∈B，且B∈C，则A∈C;（3）若A∈B，且B⊆C，则A∈C；（4）若A⊆B，且B∈C，则A∈C；；",
+      "answer": "(1) 成立。对∀x∈A, 因为A⊆B，所以x∈B。又因为B⊆C，所以x∈C。即A⊆C。(2) 不成立。反例如下：A={a}, B={a,b},C={a,b,c}。虽然A∈B，且B∈C，但A∉C。(3) 不成立。反例如下：A={a}, B={{a},b},C={{{a},b},c}。虽然A∈B，且B⊆C，但A∉C。(4) 成立。因为A⊆B, 且B∈C，所以A∈C。",
+      "sectionId": 13
+    },
+    {
+      "questionNumber": 144,
+      "content": "A上的任一良序关系一定是A上的全序关系。",
+      "answer": "∀a，b∈A，则{a,b}是A的一个非空子集。因为≤是A上的良序关系，所以{a,b}有最小元。若最小元为a，则a≤b；否则b≤a。从而≤为A上的的全序关系。",
+      "sectionId": 21
+    },
+    {
+      "questionNumber": 145,
+      "content": "若R和S都是非空集A上的等价关系，则R∩S是A上的等价关系。",
+      "answer": "∀a∈A，因为R和S都是A上的等价关系，所以aRa且aSa。故aR∩Sa。从而R∩S是自反的。∀a,b∈A，aR∩Sb，即aRb且aSb。因为R和S都是A上的等价关系，所以bRa且bSa。故bR∩Sa。从而R∩S是对称的。∀a,b,c∈A，aR∩Sb且bR∩Sc，即aRb，aSb,bRc且bSc。因为R和S都是A上的等价关系，所以aRc且aSc。故aR∩Sc。从而R∩S是传递的。故R∩S是A上的等价关系。",
+      "sectionId": 20
+    },
+    {
+      "questionNumber": 146,
+      "content": "设R⊆A×A，则R自反 ⇔ IA⊆R。",
+      "answer": "⇒∀x∈A，因为R是自反的，所以xRx。即<x,x>∈R，故IA⊆R。⇐∀x∈A，因为IA⊆R，所以<x,x>∈R。即xRx，故R是自反的。",
+      "sectionId": 18
+    },
+    {
+      "questionNumber": 147,
+      "content": "设A是集合，R⊆A×A，则R是对称的⇔R＝R⁻¹。",
+      "answer": "⇒∀<x,y>∈R ，因为R是对称的，所以yRx。即<y,x>∈R，故<x,y>∈R⁻¹ 。从而R⊆R⁻¹。反之∀<y,x>∈R⁻¹,即<x,y>∈R 。因为R是对称的，所以yRx。即<y,x>∈R， R⁻¹⊆R。故R=R⁻¹。⇐∀x，y∈A，若<x,y>∈R ，即<y,x>∈R⁻¹。因为 R=R⁻¹，所以<y,x>∈R。即yRx，故R是对称的。",
+      "sectionId": 18
+    },
+    {
+      "questionNumber": 148,
+      "content": "设A,B,C和D均是集合，R⊆A×B，S⊆B×C，T⊆C×D，则(1) R∘(S∪T)=(R∘S)∪(R∘T)；(2) R∘(S∩T)⊆(R∘S)∩(R∘T)；；",
+      "answer": "（1）∀<x，z>∈R∘(S∪T)，则由合成关系的定义知∃y∈B，使得<x，y>∈R且<y，z>∈S∪T。从而<x，y>∈R且<y，z>∈S或<x，y>∈R且<y，z>∈T，即<x，z>∈R∘S或<x，z>∈R∘T。故<x，z>∈（R∘S）∪（R∘T） 。从而R∘(S∪T)⊆（R∘S）∪（R∘T）。同理可证（R∘S）∪（R∘T）⊆R∘(S∪T)。故R∘(S∪T)=（R∘S）∪（R∘T）。(2) ∀<x，z>∈R∘(S∩T)，则由合成关系的定义知∃y∈B，使得<x，y>∈R且<y，z>∈S∩T。从而<x，y>∈R且<y，z>∈S且<y，z>∈T，即<x，z>∈R∘S且<x，z>∈R∘T。故<x，z>∈（R∘S）∩（R∘T） 。从而R∘(S∩T)⊆(R∘S）∩（R∘T）。",
+      "sectionId": 17
+    },
+    {
+      "questionNumber": 149,
+      "content": "设〈A,≤〉为偏序集，∀B⊆A，若B有最大(小)元",
+      "answer": "上(下)确界，则它们是惟一的。",
+      "sectionId": 21
+    },
+    {
+      "questionNumber": 150,
+      "content": "设A={1,2,3},写出下列图示关系的关系矩阵，并讨论它们的性质：；",
+      "answer": "（1）R={<2,1>,<3,1>,<2,3>};MR=⎛⎝⎜0 0 0；1 0 1；1 0 0⎞⎠⎟;它是反自反的",
+      "sectionId": 16
+    },
+    {
+      "questionNumber": 151,
+      "content": "设A={1,2,…,10}。下列哪个是A的划分？若是划分，则它们诱导的等价关系是什么？（1）B={{1,3,6},{2,8,10},{4,5,7}};（2）C={{1,5,7},{2,4,8,9},{3,5,6,10}};（3）D={{1,2,7},{3,5,10},{4,6,8},{9}}；",
+      "answer": "（1）和（2）都不是A的划分。（3）是A的划分。其诱导的等价关系是IA∪{<1,2>,<2,1>,<1,7>,<7,1>,<2,7>,<7,2>,<3,5>,<5,3>,<3,10>,<10,3>,<10,5>,<5,10>,<4,6>,<6,4>,<4,8>,<8,4>,<6,8>,<8,6>}。",
+      "sectionId": 20
+    },
+    {
+      "questionNumber": 152,
+      "content": "R是A={1,2,3,4,5,6}上的等价关系，R=IA∪{<1,5>,<5,1>,<2,4>,<4,2>,<3,6>,<6,3>}求R诱导的划分。",
+      "answer": "R诱导的划分为{{1,5},{2,4},{3,6}}。",
+      "sectionId": 20
+    },
+    {
+      "questionNumber": 153,
+      "content": "A上的偏序关系≤的Hasse图如下。下列哪些关系式成立：a≤b,b≤a,c≤e,e≤f,d≤f,c≤f；分别求出下列集合关于≤的极大（小）元",
+      "answer": "最大（小）元",
+      "sectionId": 21
+    },
+    {
+      "questionNumber": 154,
+      "content": "求循环群C12={e,a,a²,…,a¹¹}中H={e,a⁴,a⁸}的所有右陪集。",
+      "answer": "因为|C12|=12，|H|=3，所以H 的不同右陪集有4 个：H，{a,a⁵,a⁹},{a²,a⁶,a¹⁰},{a³,a⁷,a¹¹}。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 155,
+      "content": "试求出8阶循环群的所有生成元和所有子群。",
+      "answer": "设G是8阶循环群，a是它的生成元。则G={e,a,a²,..,a⁷}。由于aᵏ是G的生成元的充分必要条件是k与8互素，故a,a³,a⁵,a⁷是G的所有生成元。因为循环群的子群也是循环群，且子群的阶数是G 的阶数的因子，故G的子群只能是1 阶的",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 156,
+      "content": "I上的二元运算定义为：∀a,b∈I，ab=a+b-2。试问<I，*>是循环群吗。",
+      "answer": "<I，*>是循环群。因为<I，*>是无限阶的循环群，则它只有两个生成元。1和3是它的两个生成元。因为aⁿ=na-2(n-1)，故1ⁿ=n-2(n-1)=2-n。从而对任一个k∈I,k=2-(2-k)=1^(2-k)，故1是<I，*>的生成元。又因为1和3 关于互为逆元，故3 也是<I，*>的生成元。",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 157,
+      "content": "设<G,·>是群，a∈G。令H={x∈G|a·x=x·a}。试证明：H 是G 的子群。",
+      "answer": "∀c，d∈H，则对∀c，d∈H，c·a=a·c,d·a=a·d。故(c·d) ·a=c·(d·a)=c·(a·d)=(c·a) ·d=(a·c) ·d=a·(c·d)。从而c·d∈H。由于c·a=a·c,且·满足消去律，所以a ·c⁻¹=c⁻¹·a。故c⁻¹∈H。从而H 是G的子群。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 158,
+      "content": "证明：偶数阶群中阶为2 的元素的个数一定是奇数。",
+      "answer": "设<G,·>是偶数阶群，则由于群的元素中阶为1 的只有一个单位元，阶大于2 的元素是偶数个，剩下的元素中都是阶为2 的元素。故偶数阶群中阶为2 的元素一定是奇数个。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 159,
+      "content": "证明：有限群中阶大于2的元素的个数一定是偶数。",
+      "answer": "设<G,·>是有限群，则∀a∈G，有|a|=|a⁻¹|。且当a 阶大于2时，a≠a⁻¹。故阶数大于2 的元素成对出现，从而其个数必为偶数。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 160,
+      "content": "试求<N6,+6>中每个元素的阶。",
+      "answer": "0是<N6,+6>中关于+6的单位元。则|0|=1；|1|=|5|=6，|2|=|4|=3，|3|=2。",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 161,
+      "content": "设<G,·>是群，a,b∈G，a≠e，且a⁴·b=b·a⁵。试证a·b≠b·a。",
+      "answer": "用反证法证明。假设a·b=b·a。则a⁴·b= a³·（a·b）= a³·(b·a)=(a²·(a·b))·a=（a²·（b·a））·a=((a²·b)·a)·a=(a·(a·b))·(a·a)=(a·(b·a))·a²=((a·b)·a)·a² =((b·a)·a)·a²=(b·a²)·a²=b·(a²·a²)=b·a⁴。因为a⁴·b= b·a⁵，所以b·a⁵= b·a⁴。由消去律得，a=e。这与已知矛盾。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 162,
+      "content": "I上的二元运算定义为：∀a,b∈I，ab=a+b-2。试证明：<I，*>为群。",
+      "answer": "（1）∀a,b,c∈I，(ab)c=(ab)+c-2=(a+b-2)+c-2=a+b+c-4, a*(bc)=a+(bc)-2=a+(b+c-2)-2=a+b+c-4。故(ab)c= a(bc)，从而满足结合律。（2）记e=2。对∀a∈I，a2=a+2-2=a=2+a-2=2a.。故e=2是I关于运算的单位元。（3）对∀a∈I，因为a*（4-a）=a+4-a-2=2=e=4-a+a-2=(4-a)a。故4-a是a关于运算的逆元。综上所述，<I,*>为群。",
+      "sectionId": 26
+    },
+    {
+      "questionNumber": 163,
+      "content": "设<S,·>为半群，a∈S。令Sa={aⁱ | i∈I⁺ }。试证<Sa,·>是<S,·>的子半群。",
+      "answer": "∀b，c∈Sa，则存在k,l∈I⁺，使得b=aᵏ,c=aˡ。从而b·c=aᵏ·aˡ=a^(k+l)。因为k+l∈I⁺，所以b·c∈Sa，即Sa关于运算·封闭。故<Sa,·>是<S,·>的子半群。",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 164,
+      "content": "单位元有惟一逆元。",
+      "answer": "设<G，*>是一个群，e是关于运算的单位元。若e1,e2都是e的逆元，即e1e=e且e2e=e。因为e是关于运算的单位元，所以e1=e1e=e=e2*e=e2。即单位元有惟一逆元。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 165,
+      "content": "设e和0是关于A上二元运算的单位元和零元，如果|A|>1，则e≠0。",
+      "answer": "用反证法证明。假设e=0。对A的任一元素a，因为e和0是A上关于二元运算的单位元和零元，则a=ae=a0=0。即A的所有元素都等于0,这与已知条件|A|>1矛盾。从而假设错误。即e≠0。",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 166,
+      "content": "证明在元素不少于两个的群中不存在零元。",
+      "answer": "（用反证法证明）设在素不少于两个的群<G，*>中存在零元θ。对∀a∈G, 由零元的定义有 aθ=θ。因为<G，*>是群，所以关于消去律成立。故 a=e。即G中只有一个元素，这与|G|≥2矛盾。故在元素不少于两个的群中不存在零元。",
+      "sectionId": 1
+    },
+    {
+      "questionNumber": 167,
+      "content": "证明在一个群中单位元是惟一的。",
+      "answer": "设e1,e2都是群〈G,〉的单位元。则e1=e1e2=e2。所以单位元是惟一的。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 168,
+      "content": "设a是一个群〈G，〉的生成元，则a⁻¹也是它的生成元。",
+      "answer": "∀x∈G，因为a是〈G，〉的生成元，所以存在整数k，使得x=aᵏ。故x=((aᵏ)⁻¹)⁻¹=((a⁻¹)ᵏ)⁻¹=(a⁻¹)⁻ᵏ。从而a⁻¹也是〈G，*〉的生成元。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 169,
+      "content": "在一个偶数阶群中一定存在一个2阶元素。",
+      "answer": "群中的每一个元素的阶均不为0 且单位元是其中惟一的阶为1的元素。因为任一阶大于2 的元素和它的逆元的阶相等。且当一个元素的阶大于2 时，其逆元和它本身不相等。故阶大于2 的元素是成对的。从而阶为1的元素与阶大于2 的元素个数之和是奇数。因为该群的阶是偶数，从而它一定有阶为2 的元素。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 170,
+      "content": "代数系统<G，*>是一个群，则G除单位元以外无其它等幂元。",
+      "answer": "设e是该群的单位元。若a是<G，*>的等幂元，即aa=a。因为ae=a，所以aa=ae。由于运算*满足消去律，所以a=e。即G除单位元以外无其它等幂元。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 171,
+      "content": "设<G，*>是一个群，则对于a,b∈G，必有唯一的x∈G，使得ax=b。",
+      "answer": "因为a⁻¹b∈G，且a(a⁻¹b)=(aa⁻¹)b=eb=b，所以对于a,b∈G，必有x∈G，使得ax=b。若x1,x2都满足要求。即ax1=b且ax2=b。故ax1=ax2。由于满足消去律，故x1=x2。从而对于a,b∈G，必有唯一的x∈G，使得a*x=b。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 172,
+      "content": "设半群<S,·>中消去律成立，则<S,·>是可交换半群当且仅当∀a,b∈S，（a·b）²=a²·b²。",
+      "answer": "⇒∀a,b∈S，（a·b）²=(a·b)·(a·b)=((a·b)·a)·b=(a·(a·b))·b=((a·a)·b)·b=(a·a)·(b·b)=a²·b²;⇐∀a,b∈S，因为（a·b）²=a²·b²，所以(a·b)·(a·b)=(a·a)·(b·b)。故a·((b·a)·b)=a·(a·(b·b))。由于·满足消去律，所以(b·a)·b=a·(b·b)，即(b·a)·b=(a·b)·b。从而a·b=b·a。故·满足交换律。",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 173,
+      "content": "设群<G,＊>除单位元外每个元素的阶均为2，则<G,＊>是交换群。",
+      "answer": "对任一a∈G，由已知可得aa=e，即a⁻¹=a。对任一a,b∈G，因为ab=(ab)⁻¹=b⁻¹a⁻¹=ba，所以运算满足交换律。 从而＜G,*＞是交换群。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 174,
+      "content": "设是集合A上可结合的二元运算，且∀a,b∈A,若ab=ba，则a=b。试证明：（1）∀a∈A,aa=a，即a是等幂元；（2）∀a,b∈A,aba=a;（3）∀a,b,c∈A,abc=ac。",
+      "answer": "（1）∀a∈A,记b=aa。因为是可结合的，故有ba=(aa)a=a(aa)=ab。由已知条件可得a=aa。（2）∀a,b∈A,因为由（1），a*(aba)=(aa)(ba)=a(ba),(aba)a=(ab)(aa)=(ab)a=a(ba)。故a(aba)=(aba)a，从而aba=a。（3）∀a,b,c∈A,（abc）（ac）=（（abc）a）c=(a(bc)a)c且(ac)(abc)=a(c*(abc))=a*(c*(ab)c))。由（2）可知a(bc)a=a且c(ab)c=c，故（abc）（ac）=(a*(bc)a)c=ac且(ac)(abc)= a*(c*(ab)c))= ac，即（abc）（ac）=(ac)(abc)。从而由已知条件知，abc=ac。",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 175,
+      "content": "设<G,·>是群，作f:G→G,a→a⁻¹。证明：f是G的自同构 ⇔ G是交换群。",
+      "answer": "⇒设f 是G的自同构。对∀a，b∈G，a·b=(b⁻¹·a⁻¹)⁻¹=(f(b) ·f(a))⁻¹=(f(b·a))⁻¹=((b·a)⁻¹)⁻¹=b·a。故运算·满足交换律 ，即G是可交换群。⇐因为当a≠b时，a⁻¹≠b⁻¹，即f(a)≠f(b)，故f是G到G中的一个单一函数。又对∀a∈G，有f(a⁻¹)=(a⁻¹)⁻¹=a。故f是G到G上的满函数。从而f是G到G上的双射。对∀a，b∈G，因为G是可交换群，故f(a·b)=(a·b)⁻¹=(b·a)⁻¹=a⁻¹·b⁻¹=f(a)·f(b)。故f满足同态方程。从而f是G 的自同构。",
+      "sectionId": 26
+    },
+    {
+      "questionNumber": 176,
+      "content": "若群<G,＊>的子群<H,＊>满足|G|＝2|H|，则<H,＊>一定是群<G,＊>的正规子群。",
+      "answer": "由已知可知，G关于H 有两个不同的左陪集H，H1和两个不同的右陪集H，H2。因为H∩H1=∅且H∪H1=G，H∩H2=∅且H∪H2=G，故H1=G-H=H2。对∀a∈G，若a∈H，则aH=H,Ha=H。否则因为a∈G-H，故aH≠H,Ha≠H。从而aH=Ha=G-H。故H是G的正规子群。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 177,
+      "content": "设H和K都 是G的正规子群。证明：H∩K也是G 的正规子群。",
+      "answer": "因为H和K都 是G的正规子群，所以H∩K是G 的子群。对∀a∈G，h∈H∩K，有a·h·a⁻¹∈a·H·a⁻¹，a·h·a⁻¹∈a·K·a⁻¹。因为H和K都 是G的正规子群，所以a·h·a⁻¹∈H且a·h·a⁻¹∈K。从而a·h·a⁻¹∈H∩K。故H∩K是G 的正规子群。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 178,
+      "content": "设群G的中心为C（G）={a∈G|∀x∈G,a·x=x·a}。证明C（G）是G的正规子群。",
+      "answer": "先证C（G）是G的子群。∀a,b∈C（G），对∀x∈G,有a·x=x·a ，b·x=x·b。故（a·b）·x= a·(b·x)= a·(x·b)=(a·x)·b=(x·a)·b=x·(a·b), a⁻¹·x=x·a⁻¹。从而a·b，a⁻¹∈C（G）。    故C（G）是G 的子群。再证C（G）是G的正规子群。对∀a∈G，∀h∈C(G)，记b=a·h·a⁻¹。下证b∈C(G)。因为h∈C(G)，所以b=(a·h) ·a⁻¹=（h·a）·a⁻¹=h·(a·a⁻¹)=h∈C(G)。故C（G）是G的正规子群。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 179,
+      "content": "设<G,·>是没有非平凡子群的有限群。试证明：G是平凡群或质数阶的循环群。",
+      "answer": "若G是平凡群，则结论显然成立。否则设<G,·>的阶为n。任取a∈G且a≠e,记H=（a）(由a生成的G的子群)。显然H≠{e}，且G没有非平凡子群，故H=G。从而G一定是循环群，且a是G 的生成元。若n是合数，则存在大于1 的整数k,m，使得n=mk。记H={e,aᵏ,(aᵏ)²,…,(aᵏ)^(m-1)}，易证H是G 的子群，但1<|H|=m<n，故H是G 的非平凡子群。这与已知矛盾。从而n是质数。故G是质数阶的循环群。综上所述，G是平凡群或质数阶的循环群。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 180,
+      "content": "设H和K都是G 的有限子群，且|H|与|K|互质。试证明：H∩K={e}。",
+      "answer": "用反证法证明。若H∩K≠{e}。则H∩K是一个元素个数大于1的有限集。先证H∩K也是G的子群，从而也是H和K的子群。∀a,b∈H∩K,则a,b∈H且a,b∈K。因为H和K都 是G的子群，故 a·b,a⁻¹∈H且a·b,a⁻¹∈K。从而a·b∈H∩K,a⁻¹∈H∩K。故H∩K是G的子群，从而也是H和K的子群。由拉格朗日定理可知，|H∩K|是|H|和|K|的因子，这与|H|与|K|互质矛盾。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 181,
+      "content": "素数阶循环群的每个非单位元都是生成元。",
+      "answer": "设<G,*>是p阶循环群，p是素数。对G中任一非单位元a。设a的阶为k,则k≥1。由拉格朗日定理，k是p的正整因子。因为p是素数，故k=p。即a的阶就是p，即群G的阶。故a是G的生成元。",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 182,
+      "content": "若<S，*>是可交换独异点，T为S中所有等幂元的集合，则<T，*>是<S，*>的子独异点。",
+      "answer": "因为ee=e，所以e∈T，即T是S的非空子集。   ∀a,b∈T,因为<S，*>是可交换独异点,所以(ab)(ab)=((ab)a)b=(a(ba))b=（a(ab)）b=((aa)b)b=(aa)(bb)=ab,即ab∈T。故<T，*>是<S,*>的子独异点。",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 183,
+      "content": "设<G,*>是群，且a∈G的阶为n，k∈I，则|aᵏ|＝n/(k,n)，其中(k,n)为k和n的最大公因子。",
+      "answer": "记p=n/(k,n),q=k/(k,n)，｜aᵏ｜＝m。由n和p的定义，显然有(aᵏ)^p=e。故m≤p且m|p。又由于(aᵏ)^m=e，所以由定理知，n|km。即p|qm。但p和q 互质，故p|m。由于p和m都是正整数，所以p=m。即｜aᵏ｜＝n/(k,n)。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 184,
+      "content": "设<G,*>是有限群，|G|＝n，则∀a∈G，|a|≤n。",
+      "answer": "∀a∈G，由封闭性及|G|=n可知a,a²,…,aⁿ,a^(n+1)中必有相同的元素，不妨设为aᵏ=aᵐ,k<m。 由消去律得 a^(m-k)=e。从而|a|≤m-k≤n。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 185,
+      "content": "设G＝(a)，若G为无限群，则G只有两个生成元a和a⁻¹；；",
+      "answer": "∀b∈G＝(a)，则∃n∈I,使b=aⁿ。故b=(a^(-n))⁻¹=(a⁻¹)^(-n),从而a⁻¹也是G的生成元。若c是G的生成元，则∃k,m∈I，分别满足c=aᵏ和a=cᵐ。从而c= (cᵐ)ᵏ= c^(mk)。若mk≠1，则由消去律可知c的阶是有限的，这与|G|无限矛盾。从而mk=1，即k=1,m=1或k=-1,m=-1。故c=a或c=a⁻¹。从而G只有两个生成元a和a⁻¹。",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 186,
+      "content": "设G＝(a)，{e}⊂H⊂G，aᵐ是H中a 的最小正幂，则（1）H＝(aᵐ)；（2）若G为无限群，则H也是无限群；；",
+      "answer": "（1）∀b∈H, ∃k∈I, 使得b=aᵏ。令k=mq+r, 0≤r<m。则aʳ=a^(k-mq)=aᵏ*(aᵐ)^(-q)=b*(aᵐ)^(-q)。因为b,aᵐ∈H, 且H⊆G，所以aʳ∈H。由于0≤r<m，且aᵐ是H中a 的最小正幂，故r=0,即k=mq。从而b=(aᵐ)^q。故aᵐ是H的生成元。（2）因为{e}⊂H，故H的生成元为aᵐ （m≠0）。因为G是无限群，所以a的阶是无限的，从而aᵐ的阶也是无限的，故H也是无限群。",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 187,
+      "content": "设G＝(a)，|G|＝n，则对于n 的每一正因子d，有且仅有一个d阶子群。因此n阶循环群的子群的个数恰为 n的正因子数。",
+      "answer": "⇒对n 的每一正因子d，令k=n/d,b=aᵏ, H={e,b,b²,…,b^(d-1)}。因为|a|=n,所以b^d=(aᵏ)^d=a^(kd)=aⁿ=e且|b|=d。从而H中的元素是两两不同的，易证H⊆G。故|H|=d。所以H是G的一个d阶子群。设H1是G的任一d阶子群。则由定理知，H1＝(aᵐ)，其中aᵐ是H1中a 的最小正幂，且|H|=n/m。因为|H|=d，所以m=n/d=k，即H=H1。从而H是G的惟一d阶子群。⇐设H是G的惟一的d阶子群。若d=1 ,则结论显然成立。否则H＝(aᵐ)，其中aᵐ是H中a 的最小正幂。由定理知，d=n/m。故d是n的一个正因子。",
+      "sectionId": 29
+    },
+    {
+      "questionNumber": 188,
+      "content": "设h是从群<G1，*>到<G2,⊗>的群同态，G1和G2的单位元分别为e1和e2，则（1）h(e1)=e2；（2）∀a∈G1，h(a⁻¹)=h(a)⁻¹；（3）若H⊆G1，则h(H)⊆G2；（4）若h为单一同态，则∀a∈G1，|h(a)|=|a|。",
+      "answer": "(1) 因为h(e1)⊗h(e1)=h(e1e1)= h(e1)= e2⊗h(e1),所以h(e1)=e2。(2) ∀a∈G1，h(a)⊗h(a⁻¹)=h(aa⁻¹)= h(e1)= e2,h(a⁻¹)⊗h(a)=h(a⁻¹a)= h(e1)= e2,故h(a⁻¹)=h(a)⁻¹。(3) ∀c,d∈h(H),∃a,b∈H，使得c=h(a),d=h(b)。故c⊗d=h(a)⊗h(b)=h(ab)。因为H⊆G，所以ab ∈H ，故c⊗d∈h(H)。又c⁻¹=(h(a))⁻¹=h(a⁻¹)且a⁻¹∈H，故c⁻¹∈h(H)。由定理知h(H)⊆G2。(4) 若|a|=n,则aⁿ=e1。故(h(a))ⁿ=h(aⁿ)=h(e1)=e2。从而h(a)的阶也有限，且|h(a)|≤n。设|h(a)|=m,则h(aᵐ)= (h(a))ᵐ= h(e1)=e2。因为h是单一同态，所以aᵐ=e1。即|a|≤m。故|h(a)|=|a|。若a的阶是无限的，则类似于上述证明过程可以得出，h(a)的阶也是无限的。故结论成立。",
+      "sectionId": 26
+    },
+    {
+      "questionNumber": 189,
+      "content": "有限群G的每个元素的阶均能整除G的阶。",
+      "answer": "设|G|=n，∀a∈G，则|a|=m。令H={e,a,a²,…,a^(m-1)}。则H是G的子群且|H|=m。由Lagrange定理知|H|能整除|G|，故a的阶能整除G的阶。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 190,
+      "content": "证明：在同构意义下，只有两个四阶群，且都是交换群。",
+      "answer": "在4阶群 G中，由Lagrange定理知，G中的元素的阶只能是1，2或4。阶为1 的元素恰有一个，就是单位元e.若G有一个4阶元素，不妨设为a，则G=（a）,即G是循环群 ，从而是可交换群。若G没有4阶元素，则除单位元e外，G的其余3个元素阶均为2。不妨记为a,b,c。因为a,b,c的阶均为2，故a⁻¹=a,b⁻¹=b,c⁻¹=c。从而ab≠a, ab≠b, ab≠e,故ab=c。同理可得ac=ca=b, cb=bc=a, b*a=c。故G是交换群。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 191,
+      "content": "在一个群<G,*>中，若G中的元素a的阶是k，即|a|=k，则a⁻¹的阶也是k。",
+      "answer": "因为| a |=k，所以aᵏ=e。即（a⁻¹）ᵏ=(aᵏ)⁻¹=e⁻¹=e。从而a⁻¹的阶是有限的，且|a⁻¹|≤k。同理可证，a的阶小于等于|a⁻¹|。故a⁻¹的阶也是k。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 192,
+      "content": "在一个群<G，*>中，若A和B 都是G的子群。若A∪B=G，则A=G或B=G。",
+      "answer": "用反证法证明。若A≠G且B≠G，则有a∈A,a∉B且b∈B,b∉A。因为A，B都是G的子群，故a,b∈G，从而ab∈G。因为a∉A,所以a⁻¹∉A。若ab∈A,则b= a⁻¹(ab)∈A，这与b∉A矛盾。从而ab∉A。同理可证ab∉B。综合可得ab∉A∪B=G，这与已知矛盾。从而假设错误，得证A=G或B=G。",
+      "sectionId": 28
+    },
+    {
+      "questionNumber": 193,
+      "content": "设e是奇数阶交换群<G，*>的单位元，则G的所有元素之积为e。",
+      "answer": "设G=<{e,a1,a2,…,a2n}，*>，n为正整数。因为G的阶数为奇数2n+1，所以由拉格朗日定理知G中不存在2 阶元素，即除了单位元e以外，G的所有元素的阶都大于2。故对G中的任一非单位元a，它的逆元a⁻¹不是它本身，且G中不同的元素有不同的逆元。由此可见，G中的2n个非单位元构成互为逆元的n对元素。因为G 是交换群，故G的所有元素之积可变成单位元和n对互为逆元的元素之积的积，从而结果为e。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 194,
+      "content": "设S=Q×Q，Q为有理数集合，为S上的二元运算：对任意(a,b)，(c,d)∈S,有(a,b)(c,d)=(ac,ad+b),求出S关于二元运算的单位元，以及当a≠0时，(a,b)关于的逆元。",
+      "answer": "设S关于的单位元为(a,b)。根据和单位元的定义，对∀(x,y)∈S,有(a,b)(x,y)=(ax,ay+b)=(x,y), (x,y)(a,b)=(ax,xb+y)=(x,y)。即ax=x,ay+b=y,xb+y=y对∀x,y∈Q都成立。解得a=1,b=0。所以S关于的单位元为(1,0)。当a≠0时，设(a,b)关于的逆元为(c,d)。根据逆元的定义，有(a,b)(c,d)= (ac,ad+b)=(1,0)，(c,d)(a,b)= (ac,cb+d)=(1,0)，即ac=1,ad+b=0,cb+d=0。解得c=1/a,d=-b/a。所以(a,b)关于*的逆元为(1/a,-b/a)。",
+      "sectionId": 25
+    },
+    {
+      "questionNumber": 195,
+      "content": "设<G，*>为群，a,b,c∈G。若ab=cba,ac=ca,bc=cb，且a,b的阶分别为m,n，则c的阶整除m与n的最大公因子(m,n)。",
+      "answer": "设c的阶为k。在ab=cba两边同时右乘b⁻¹，再由ab=cba得abⁿ=(cba)bⁿ⁻¹=(cb)(ab)bⁿ⁻²=(cb)(cba)bⁿ⁻²=(cb)²abⁿ⁻²=(cb)²(ab)bⁿ⁻³=(cb)²(cba)bⁿ⁻³=(cb)³abⁿ⁻³=…=(cb)ⁿa,再由bc=cb及b 的阶为n得a=abⁿ= (cb)ⁿa=(cⁿbⁿ)a=cⁿa,所以cⁿ=e。故由元素阶的定义有k|n。由ab=cba,ac=ca,bc=cb得ab=bac，两边同时左乘a⁻¹，再由ab=bac得aᵐb=aᵐ⁻¹*(bac)= aᵐ⁻¹* (ab)(ac)= aᵐ⁻¹(bac)(ac)= aᵐ⁻¹b(ac)²= aᵐ⁻²(ab)(ac)²= aᵐ⁻²(bac)(ac)²= aᵐ⁻²b(ac)³=…=b(ac)ᵐ,再由ac=ca及a 的阶为m得b= aᵐb= b*(ac)ᵐ=baᵐ * cᵐ=b*cᵐ,所以cᵐ=e。故由元素阶的定义有k|m。由此可见，k是m和n的公因子，从而能整除m和n的最大公因子(m,n)。",
+      "sectionId": 27
+    },
+    {
+      "questionNumber": 196,
+      "content": "当n分别是24，36，110时，<Sₙ,|>是布尔代数吗？若是，则求出其原子集。",
+      "answer": "因为|S₂₄|=8，|S₃₆|=9，|S₁₁₀|=8，故<S₃₆,|>不是布尔代数。在<S₂₄,|>中12没有补元，故它也不是布尔代数。<S₁₁₀,|>是布尔代数，其原子集为{2,5,11}。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 197,
+      "content": "设L是有界格，且|L|>1。证明：0≠1。",
+      "answer": "用反证法证明。设0=1。则任取a∈L，则由于L是有界格，故a≤1且0≤a。即0≤a≤1。因为0=1且≤是L上的偏序关系，所以a=0。这与已知|L|>1矛盾。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 198,
+      "content": "设(L,≤)是格，若a,b,c∈L，a≤b≤c，则a∨b=b∧c ,  (a∧b)∨(b∧c)=(a∨b)∧(a∨c)",
+      "answer": "因为a≤b≤c，所以a∧b=a，a∨b=b，且b=b∧c，c=b∨c。从而a∨b=b∧c。(a∧b)∨(b∧c)=a∨(b∧c)=a∨(a∨b)=(a∨a)∨b=a∨b=b，(a∨b)∧(a∨c)=b∧(a∨c)=b∧c=b。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 199,
+      "content": "在布尔代数中，证明恒等式a∨(¬a∧b)=a∨b",
+      "answer": "a∨(¬a∧b)=(a∨¬a)∧(a∨b)=1∧(a∨b)=a∨b",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 200,
+      "content": "设<L,∨,∧>是格，a₁,a₂,…,aₙ∈L。证明：a₁∧a₂∧…∧aₙ= a₁∨a₂∨…∨aₙ当且仅当a₁=a₂=…=aₙ。",
+      "answer": "⇒显然是成立的。⇐对任一k=1,2,..,n，a₁∧a₂∧…∧aₙ≤aₖ，aₖ≤a₁∨a₂∨…∨aₙ。因为a₁∧a₂∧…∧aₙ= a₁∨a₂∨…∨aₙ，且≤是L上的偏序关系，故aₖ=a₁∧a₂∧…∧aₙ。从而a₁=a₂=…=aₙ。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 201,
+      "content": "在布尔代数中，证明恒等式(a∨c)∧(¬a∨b)∧(b∨c)=(a∨c)∧(¬a∨b)",
+      "answer": "((a∨c)∧(¬a∨b))∧(b∨c)=((a∨c)∧(b∨c))∧((¬a∨b)∧(b∨c))=(a∧b∨c)∧(¬a∧b∨c)=(a∧¬a)∨b∨c=1∨b∨c=b∨c,故 b∨c≤(a∨c)∧(¬a∨b)，从而(a∨c)∧(¬a∨b)∧(b∨c)=(a∨c)∧(¬a∨b)。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 202,
+      "content": "在布尔代数中，证明恒等式(a∨b)∧(¬a∨c)∧(¬b∨c)=(a∨b)∧c",
+      "answer": "(a∨b)∧(¬a∨c)∧(¬b∨c)=(a∨b)∧((¬a∧¬b)∨c)=(a∨b)∧(¬(a∨b)∨c)=(a∨b)∧c。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 203,
+      "content": "设<L,∨,∧>是格，a,b,c,d∈L。证明：若a≤b且c≤d，则a∧c≤b∧d",
+      "answer": "因为a≤b，c≤d，所以a=a∧b,c=c∧d。从而(a∧c)∧(b∧d)=((a∧c)∧b)∧d=(b∧(a∧c))∧d=((b∧a)∧c)∧d=a∧(c∧d)=a∧c，所以a∧c≤b∧d。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 204,
+      "content": "当n分别是10,45时，画出<Sₙ,|>的哈斯图。",
+      "answer": "10的哈斯图：顶层10，中层5，2，底层1；45的哈斯图：顶层45，中层9，15，底层3，5，最底层1。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 205,
+      "content": "在布尔代数中，证明恒等式(a∨¬b)∧(b∨¬c)∧(c∨¬a)=(¬a∨b)∧(¬b∨c)∧(¬c∨a)",
+      "answer": "(a∨¬b)∧(b∨¬c)∧(c∨¬a)=(a∧b∧c)∨(a∧b∧¬a)∨(a∧¬c∧¬a)∨(a∧¬c∧c)∨(¬b∧b∧c)∨(¬b∧b∧¬a)∨(¬b∧¬c∧¬a)∨(¬b∧¬c∧c)=(a∧b∧c)∨(¬a∧¬b∧¬c)，(¬a∨b)∧(¬b∨c)∧(¬c∨a)=(¬a∧¬b∧¬c)∨(¬a∧¬b∧a)∨(¬a∧c∧¬c)∨(¬a∧c∧a)∨(b∧¬b∧¬c)∨(b∧¬b∧a)∨(b∧c∧¬c)∨(b∧c∧a)=(a∧b∧c)∨(¬a∧¬b∧¬c)，故(a∨¬b)∧(b∨¬c)∧(c∨¬a)=(¬a∨b)∧(¬b∨c)∧(¬c∨a)。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 206,
+      "content": "设<L,≤>是格，a,b∈L，且a≤b，记I[a,b]={x∈L|a≤x≤b}则<I[a,b],≤>是<L,≤>的子格。",
+      "answer": "∀x,y∈I[a,b],a≤x≤b且a≤y≤b。由格的性质有a≤x∧y≤b且a≤x∨y≤b。从而x∧y∈I[a,b]且x∨y∈I[a,b]。故I[a,b] 关于∧和∨是封闭的，从而<I[a,b]，≤>是<L，≤>的子格。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 207,
+      "content": "设A＝{a,b,c}，求<P(A),⊆>的子格（P(A)表示A的幂集）。",
+      "answer": "P(A)={∅,{a},{b},{c},{a,b},{a,c},{b,c},A}。在P(A)的所有非空子集中，只要它关于∪和∩是封闭的，则它就是<P(A),⊆>的子格。显然<P(A),⊆>和<{∅},⊆>是<P(A),⊆>的子格。<{∅,{a}},⊆>，<{∅,{b}},⊆>，<{∅,{c}},⊆>，<{∅,{a,b}},⊆>，<{∅,{a,c}},⊆>，<{∅,{b,c}},⊆>，<{∅,A},⊆>，<{∅,{c},{a,c},{b,c},A },⊆>等都是<P(A),⊆>的子格。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 208,
+      "content": "证明：在同构意义下，4阶格只有2个。",
+      "answer": "若≤是L上的全序关系，则它一定是良序关系(因为任一有限的全序集一定是良序集)。若设L={a,b,c,d}，则L的四个元素满足：a≤b≤c≤d。若≤不是L上的全序关系，则L中一定存在两个元素（不妨设为b,c），b≤c和c≤b都不成立。因此b∨c和b∧c既不可能相等，也不可能是b和c。不妨记a=b∧c,d=b∨c。故<L,≤>的四个元素a,b,c,d满足a≤a,b≤b,c≤c,d≤d,a≤b,a≤c,a≤d,b≤d,c≤d。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 209,
+      "content": "设<A，∨,∧>是有界格，≤是A上的全序关系。若|A|＞2，则∀a∈A-{0,1}，a无补元。",
+      "answer": "用反证法证明。若∃ a∈A-{0,1}，a有补元a'。即a∨a'=1，a∧a'=0。因为≤是A上的全序关系，所以a≤a'或a'≤a。若a≤a'，则a= a∧a'=0。若a'≤a，则a= a∨a'=1。无论如何，这与a∈A-{0,1}矛盾。",
+      "sectionId": 31
+    },
+    {
+      "questionNumber": 210,
+      "content": "格<L,∨,∧>是模格⇔∀a,b,c∈L，有a∨(b∧(a∨c))=(a∨b)∧(a∨c)",
+      "answer": "⇒∀a,b,c∈L，记d= a∨c。所以a≤d,从而a∨(b∧(a∨c))= a∨(b∧d)= (a∨b)∧d=(a∨b)∧(a∨c)。⇐∀a,b,c∈L，若a≤c，则c= a∨c。所以(a∨b)∧c= (a∨b)∧（a∨c）= a∨(b∧(a∨c))= a∨(b∧c)。",
+      "sectionId": 32
+    },
+    {
+      "questionNumber": 211,
+      "content": "设<L,∨,∧>是分配格， a,b,c∈L。若(a∧b)＝(a∧c)且(a∨b)＝(a∨c)，则b＝c。",
+      "answer": "由吸收律，分配律和交换律有b=b∧(a∨b)＝b∧(a∨c)=（b∧a）∨（b∧c）=(a∧c) ∨(b∧c)=c∨(a∧b)= c∨(a∧c)＝c。",
+      "sectionId": 32
+    },
+    {
+      "questionNumber": 212,
+      "content": "证明：在有补分配格中，每个元素的补元一定惟一。",
+      "answer": "设<L,∨,∧>是一个有补分配格。∀a∈L,设b和c都是a 的补元，即a∨b=1,a∨c=1,a∧b=0,a∧c=0。由吸收律，分配律和交换律有b= b∨0＝b∨(a∧c)=(b∨a)∧(b∨c)=1∧(b∨c)=b∨c,c= c∨0=c∨(a∧b)＝(c∨a)∧(c∨b)=1∧(c∨b)=c∨b。故b=c。从而每个元素的补元是惟一的。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 213,
+      "content": "设<L,∨,∧>是格，则L是分配格当且仅当∀a,b,c∈L，有(a∨b)∧c≤a∨(b∧c)",
+      "answer": "⇒设L是分配格。对∀a,b,c∈L，有(a∨b)∧c=(a∧c)∨(b∧c)因为a∧c≤a，故(a∧c)∨(b∧c) ≤a∨(b∧c)。从而(a∨b)∧c≤a∨(b∧c)⇐对∀a,b,c∈L，因为a∧c≤a,a∧c≤ c,a≤ a∨b,b∧c≤ c,b∧c≤ b,b≤ a∨b,所以a∧c≤ a∨b，a∧c≤ c，b∧c≤ c,b∧c≤ a∨b，从而(a∧c)∨(b∧c)≤(a∨b)∧c。又由已知有(a∨b)∧c=((b∨a)∧c)≤b∨(a∧c)≤(a∧c)∨(b∧c)。故(a∨b)∧c=((a∧c)∨b)∧c≤(a∧c)∨(b∧c)。从而L是分配格。",
+      "sectionId": 32
+    },
+    {
+      "questionNumber": 214,
+      "content": "设<S,∨,∧,′,0,1>是一布尔代数，则<S,＋>是一个交换群，其中＋定义为a+b=(a∧b′)∨(a′∧b)。",
+      "answer": "∀a,b∈S，∵＜S,∨,∧,′,0,1>是一布尔代数，∴a+b=(a∧b′)∨(a′∧b)= (b∧a′)∨(b′∧a)=b+a。∴运算+满足交换律。∀a,b,c∈S，(a+b)+c=((a∧b′)∨(a′∧b))+c=(((a∧b′)∨(a′∧b))∧c′)∨(((a∧b′)∨(a′∧b))′∧c)=(a∧b′∧c′)∨(a′∧b∧c′) ∨((a′∨b)∧(a∨b′)∧c)=(a∧b′∧c′)∨(a′∧b∧c′)∨(((a′∧b′)∨(b∧a))) ∧c)=(a∧b′∧c′)∨(a′∧b∧c′)∨ (a′∧b′∧c) ∨(a∧b∧c)a+(b+c)=(c+b)+a=(c∧b′∧a′)∨(c′∧b∧a′)∨ (c′∧b′∧a) ∨(c∧b∧a)=(a∧b′∧c′)∨(a′∧b∧c′)∨ (a′∧b′∧c) ∨(a∧b∧c)=(a+b)+c∴运算+满足结合律。∀a∈S，∵＜S,∨,∧,′,0,1>是一布尔代数，∴a+0=(a∧0′)∨(a′∧0)= (a∧1)∨0=a。∴0关于运算+的单位元。∀a∈S，∵＜S,∨,∧,′,0,1>是一布尔代数，∴a+a=(a∧a′)∨(a′∧a)=0∨0=0。∴a是a关于运算+的逆元。综上所述，<S,＋>是一个交换群。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 215,
+      "content": "设<S,∨,∧,′,0,1>是一布尔代数，则R={<a,b> | a∨b=b}是S上的偏序关系。",
+      "answer": "∀a∈S，∵∨满足等幂律，∴ a∨a=a，故aRa。即R是自反的。∀a,b∈S，若aRb且bRa,∵ ∨满足交换律，∴ b=a∨b=b∨a=a。即R是反对称的。∀a,b,c∈S，若aRb且bRc,∵ ∨满足结合律，∴ c=c∨b=c∨（b∨a）=(c∨b)∨a=c∨a,故aRc。即R是传递的。综上所述，R={<a,b> | a∨b=b}是S上的偏序关系。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 216,
+      "content": "设<S,∨,∧,′,0,1>是一布尔代数，则关系≤={<a,b> | a∧b=a}是S上的偏序关系。　",
+      "answer": "∀a∈S，因为∧满足等幂律，所以a∧a=a，故a≤a。即≤是自反的。∀a,b∈S，若a≤b且b≤a,因为∧满足交换律，所以a=a∧b=b∧a=b。即≤是反对称的。∀a,b,c∈S，若a≤b且b≤c,因为∧满足结合律，因为a=a∧b=a∧(b∧c)=(a∧b)∧c=a∧c,故a≤c。即≤是传递的。综上所述，≤={<a,b> | a∧b=a}是S上的偏序关系。",
+      "sectionId": 33
+    },
+    {
+      "questionNumber": 217,
+      "content": "证明在有n个结点的树中，其结点度数之和是2n-2。",
+      "answer": "设T=<V,E>是任一棵树，则|V|=n，且|E|=n-1。由欧拉握手定理，树中所有结点的度数之和等于2|E|。从而结点度数之和是2n-2。",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 218,
+      "content": "任一图中度数为奇数的结点是偶数个。",
+      "answer": "设G=〈V,E〉是任一图。设|V|=n。由欧拉握手定理可得∑deg(v)=2|E|可得，图中所有结点度数之和是偶数。显然所有偶数度结点的度数之和仍为偶数，从而所有奇数度结点的度数之和也是偶数。因此，图中度数为奇数的结点一定为偶数个。",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 219,
+      "content": "连通无向图G的任何边一定是G的某棵生成树的弦。这个断言对吗？若是对的请证明之，否则请举例说明。",
+      "answer": "不对。反例如下：若G 本身是一棵树时，则G的每一条边都不可能是G的任一棵生成树（实际上只有惟一一棵）的弦。",
+      "sectionId": 41
+    },
+    {
+      "questionNumber": 220,
+      "content": "设T=<V,E>是一棵树，若|V|>1，则T中至少存在两片树叶。",
+      "answer": "（用反证法证明）设|V|=n。因为T=〈V,E〉是一棵树，所以|E|=n-1。由欧拉握手定理可得∑deg(v)=2|E|=2n-2。假设T中最多只有1片树叶，则∑deg(v)≥2(n-1)+1>2n-2。得出矛盾。",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 221,
+      "content": "画一个使它分别满足：有欧拉回路和哈密尔顿回路；有欧拉回路，但无哈密尔顿回路；无欧拉回路，但有哈密尔顿回路；既无欧拉回路，又无哈密尔顿回路。",
+      "answer": "有欧拉回路和哈密尔顿回路：正六边形（每个顶点度数为2，连通，存在欧拉回路；存在哈密尔顿回路遍历所有顶点）；有欧拉回路但无哈密尔顿回路：一个顶点连接三个互不相交的三角形（中心顶点度数6，三角形顶点度数2，连通且所有顶点度数偶数，有欧拉回路；无法找到遍历所有顶点的哈密尔顿回路）；无欧拉回路但有哈密尔顿回路：正六边形去掉一条边（两个顶点度数3，其余度数2，无欧拉回路；仍能找到遍历所有顶点的哈密尔顿回路）；既无欧拉回路又无哈密尔顿回路：两个不连通的三角形（不连通，既无欧拉回路也无哈密尔顿回路）。",
+      "sectionId": 38
+    },
+    {
+      "questionNumber": 222,
+      "content": "设无向图G=<V,E>，|E|=12。已知有6个3度顶点，其他顶点的度数均小于3。问G中至少有多少个顶点？",
+      "answer": "设G中度数小于3的顶点有k个，由欧拉握手定理24=6×3+∑(其余顶点度数)知，度数小于3 的顶点度数之和为6。故当其余的顶点度数都为2时，G的顶点最少。即G中至少有9个顶点。",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 223,
+      "content": "设图G=<V,E>，|V|=n，|E|=m。k度顶点有nₖ个，且每个顶点或是k度顶点或是k+1度顶点。证明：nₖ=(k+1)n-2m。",
+      "answer": "由已知可知，G中k+1度顶点为n-nₖ个。再由欧拉握手定理可知2m=knₖ+(k+1)(n-nₖ)=(k+1)n-nₖ故nₖ=(k+1)n-2m。",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 224,
+      "content": "设G=<V,E>是一个连通且|V|=|E|+1的图，则G中有一个度为1的结点。",
+      "answer": "(用反证法证明）设|V|=n，则|E|=n-1。由欧拉握手定理可得∑deg(v)=2|E|=2n-2。因为G连通，所以∀v∈V，deg(v)≥1。假设G中没有度为1的结点，则∑deg(v)≥2n>2n-2。得出矛盾。",
+      "sectionId": 36
+    },
+    {
+      "questionNumber": 225,
+      "content": "若n阶连通图中恰有n-1 条边，则图中至少有一个结点度数为1。",
+      "answer": "（用反证法证明）设G=<V,E>有n-1条边且|V|=n。由欧拉握手定理可得∑deg(v)=2|E|=2n-2。因为G是连通图，所以G中任一结点的度数都大于等于1。假设G中不存在度数为1 的结点，则G中任一结点的度数都大于等于2，故∑deg(v)≥2n>2n-2，得出矛盾。",
+      "sectionId": 36
+    },
+    {
+      "questionNumber": 226,
+      "content": "若G有n个结点，m条边，f个面，且每个面至少由k(k≥3)条边围成，则  m≥k(n－2)／(k－2)。",
+      "answer": "设连通简单无向平面图G=〈V,E,F〉，则|V|=n,|E|=m,|F|=f。由已知对任一f∈F,deg(f)≥k。由公式∑deg(f)=2|E|可得，2|E|≥k|F|。再由欧拉公式|V|-|E|+|F|=2可得|V|-|E|+(2|E|/k)≥2。即k(n-2)≤(k-2)m。所以m≥k(n－2)／(k－2)。",
+      "sectionId": 44
+    },
+    {
+      "questionNumber": 227,
+      "content": "设G=<V,E>是连通的简单平面图，|V|=n≥3，面数为k,则k≤2n-4。",
+      "answer": "记|E|=m。因为G=<V,E>是连通的简单平面图，故每个面的度数都不小于3。从而由公式∑deg(f)=2|E|可得3k≤2m，再由欧拉公式|V|-|E|+|F|=2有m=n+k-2，及3k≤2(n+k-2)，故  k≤2n-4。",
+      "sectionId": 44
+    },
+    {
+      "questionNumber": 228,
+      "content": "证明对于连通无向简单平面图，当边数e＜30时，必存在度数≤4的顶点。",
+      "answer": "若结点个数小于等于3时，结论显然成立。当结点多于3 个时，用反证法证明。记|V|=n,|E|=m,|F|=k。假设图中所有结点的度数都大于等于5。由欧拉握手定理得∑deg(v)=2|E|得    5n≤2m。又因为G=〈V,E,F〉是一个连通简单无向平面图，所以对每个面f,deg(f)≥3。由公式∑deg(f)=2|E|可得，2m≥3k。再由欧拉公式|V|-|E|+|F|=2可得2≤(2m/5)-m+(2m/3)=m/15，从而30≤m,这与已知矛盾。",
+      "sectionId": 43
+    },
+    {
+      "questionNumber": 229,
+      "content": "在一个连通简单无向平面图G=〈V，E，F〉中若|V|≥3，则 |E|≤3|V|－6。",
+      "answer": "∵|V|≥3，且G=〈V，E，F〉是一个连通简单无向平面图，∴d(f) ≥3，∀f∈F。由公式∑deg (f)=2|E|可得，2|E|≥3|F|。再由欧拉公式|V|-|E|+|F|=2可得|V|-|E|+(2|E|/3)≥2。∴|E|≤3|V|－6。",
+      "sectionId": 44
+    },
+    {
+      "questionNumber": 230,
+      "content": "给定连通简单平面图G=<V,E,F>，且|V|=6, |E|=12, 则对于任意f∈F, d(f)=3。",
+      "answer": "因为|V|=6≥3，且G=〈V,E,F〉是一个连通简单无向平面图，所以对任一f∈F，deg(f)≥3。由欧拉公式|V|-|E|+|F|=2可得|F|=8。再由公式∑deg(f)=2|E|，∑deg(f)=24。因为对任一f∈F，deg(f)≥3，故要使上述等式成立， 对任一f∈F，deg(f)=3。",
+      "sectionId": 43
+    },
+    {
+      "questionNumber": 231,
+      "content": "设G=<V,E>是n个顶点的无向图(n>2)，若对任意u,v∈V，有d(u)+d(v)≥n，则G是连通图。",
+      "answer": "用反证法证明。若G 不连通，则它可分成两个独立的子图G₁和G₂，其中|V(G₁)|+|V(G₂)|=n ，且G₁中的任一个顶点至多只和G₁中的顶点邻接，而G₂中的任一顶点至多只和G₂中的顶点邻接。任取u∈V(G₁),v∈V(G₂),则   d(u)≤|V(G₁)|-1, d(v)≤|V(G₂)|-1。故d(u)+d(v) ≤(|V(G₁)|-1)+(|V(G₂)|-1)=|V(G₁)|+|V(G₂)|-2=n-2<n，这与已知矛盾。故G是连通图。",
+      "sectionId": 38
+    },
+    {
+      "questionNumber": 232,
+      "content": "一次会议有20人参加，其中每个人都在其中有不下10个朋友。这20人围成一圆桌入席。有没有可能使任意相邻而坐的两个人都是朋友？为什么？ ",
+      "answer": "可以。将每个人对应成相应的顶点，若两人是朋友，则对应的两个顶点间连上一条无向边，作出一个简单无向图。由已知，图中每个顶点的度数都大于等于10。即图中任两个不相邻的顶点的度数和大于等于20，等于顶点数。故这个图是一个哈密尔顿图，从而存在哈密尔顿回路。任取一条哈密尔顿回路，按回路经过的顶点的次序安排对应的人的座位，就可满足要求。",
+      "sectionId": 38
+    },
+    {
+      "questionNumber": 233,
+      "content": "证明在任何两个或两个以上人的组内，存在两个人在组内有相同个数的朋友。 ",
+      "answer": "将每个人对应成相应的顶点，若两人是朋友，则对应的两个顶点间连上一条无向边，作出一个简单无向图。则原命题相当于在该无向图中一定存在两个顶点的度数相等。设该简单无向图中有n个顶点，则图中n个顶点的度数只能为0，1，2，…，n-1。若图中有两个或两个以上的顶点度数为0，则结论显然成立。否则所有顶点的度数都大于等于1。现用反证法证明该无向图中一定存在两个顶点的度数相等。设该简单无向图中n个顶点中任何一对顶点的度数都不相等，即这n个顶点的度数两两不同。但每个顶点的度数只能是1,2,…,n-1这n-1个数中的某一种，这显然产生了矛盾。因此该无向图中一定存在两个顶点的度数相等。从而在任何两个或两个以上人的组内，存在两个人在组内有相同个数的朋友。",
+      "sectionId": 35
+    },
+    {
+      "questionNumber": 234,
+      "content": "在一个有n个顶点的G=<V,E>中，u,v∈V。若存在一条从u到v的一条通路，则必有一条从u到v的长度不超过n-1的通路。",
+      "answer": "设v₀e₁v₁e₂…eₗvₗ是从u=v₀到v=vₗ的长为l的通路。若l≤n-1，则结论显然成立。否则因为l+1>n，故v₀，v₁，…，vₗ中必有一个顶点是重复出现的。不妨设vᵢ=vⱼ(0≤i<j≤l)，则新通路v₀e₁v₁e₂…vᵢeⱼ₊₁vⱼ₊₁eⱼ₊₂vⱼ₊₂…eₗvₗ是一条从u 到v的通路，且此通路长度比原通路长度至少少1。若新通路的长度≤n-1，则结论得证。否则对新通路重复上述过程，必可以得到一条从u到v的长不超过n-1的通路。",
+      "sectionId": 36
+    },
+    {
+      "questionNumber": 235,
+      "content": "设简单平面图G中顶点数n=7，边数m=15。证明：G是连通的。",
+      "answer": "设G具有k个连通分支G₁，G₂，…，Gₖ。设Gᵢ的顶点数为nᵢ，边数为mᵢ，i=1,2,…,k。先证每个连通分支的顶点数都大于1。否则说明G中有孤立结点。由于G是简单图，从而要使G的边数是15，则G只有两个连通分支，其中一个是由孤立结点导出的，另一个是K₆。但K₆不是平面图，故每个连通分支的顶点数都大于1。同理可证，每个连通分支的顶点数都大于2。由此可得，G的每个连通分支至少有3 个顶点。从而mᵢ≤3nᵢ-6，即m=∑mᵢ≤∑(3nᵢ-6)=3n-6k，从而15≤21-6k，即k≤1。从而k=1，故G是连通图。",
+      "sectionId": 36
+    },
+    {
+      "questionNumber": 236,
+      "content": "已知一棵无向树中有2个2度顶点，1个3度顶点，3个4度顶点，其余顶点度数都为1。问它有多少个1度顶点？",
+      "answer": "设它有k个1度顶点，则由欧拉握手定理∑deg(v)=2|E|可得 2|E|=k+2×2+1×3+3×4=k+19。再由于它是一棵树，故|E|=k+2+1+3-1=k+5，从而2(k+5)=k+19, k=9。故它有9个1度顶点。",
+      "sectionId": 40
+    },
+    {
+      "questionNumber": 237,
+      "content": "有向图G是强连通的⇔G中有一回路，它至少通过每个顶点一次。",
+      "answer": "⇒设G=<V,E>是强连通图。任取u,v∈V，则u和v相互可达，即从u到v有路径P₁，从v到u有路径P₂。故从P₁和P₂首尾相接可得到一条经过u和v的回路C₁。若C₁经过G中所有顶点至少一次，则C₁就是满足结论要求的回路。否则若C₁没有经过顶点w，则类似地我们可得到一条经过u和w的回路C₂。从C₁和C₂我们可得到一条经过更多顶点的回路C₃（先从u经过P₁到v,再从v经过C₂回到v,再从v经过P₂回到u）。对C₃重复上述过程，直到得到一条经过所有顶点的回路为止。⇐若G中存在一条经过G中所有顶点至少一次的回路，则G中任意两个顶点是相互可达的，从而G是强连通的。",
+      "sectionId": 36
+    },
+    {
+      "questionNumber": 238,
+      "content": "一个有向图是单向连通图⇔它有一条经过所有结点的路。",
+      "answer": "⇒设G=<V,E>是单向连通图。任取u,v∈V，则u可达v或v可达u。不妨设u可达v，即从u到v有路径P₁。若P₁经过G中所有顶点至少一次，则P₁就是满足结论要求的路径。否则若P₁没有经过顶点w，则如果v经过路径T可达w, 连接P₁和T我们可得一条经过P₁经过的所有顶点及w的更长的路径P₂；否则若w经过路径S可达u，连接S和P₁我们也可得一条经过w及P₁经过的所有顶点的更长的路径P₃；再否则我们一定可以找到P₁经过的两个相邻顶点t和s，t到s有边，t经过路径T₁可达w，w经过路径T₂可达s（否则就与u可达w，w可达v矛盾），我们构造这样一条路径P₄：从u出发经过P₁到达t,t经过路径T₁到达w，再从w出发经过路径T₂到达s，然后从s出发经过P₁到达v。这是一条经过w及P₁所经过的所有顶点的更长的路径。对P₄重复上述过程，直到得到一条经过所有顶点的路径为止。⇐若G中存在一条经过G中所有顶点至少一次的路径，则G中任意两个顶点中至少有一个可达另一个，从而G是单向连通的。",
+      "sectionId": 36
+    }
+  ]
+}

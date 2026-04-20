@@ -1,0 +1,23 @@
+{
+  "name": "register",
+  "version": "1.0.0",
+  "description": "用户注册云函数 - 支持学生和教师注册",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "uniCloud",
+    "cloudfunction",
+    "register",
+    "user"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

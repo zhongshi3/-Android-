@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 不使用 Material3 颜色系统，保持原有颜色设置 -->
+        <!-- 这里可以添加自定义颜色，但不要使用 Material3 的 colorPrimary 等系统颜色 -->
+    </style>
+
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+</resources>

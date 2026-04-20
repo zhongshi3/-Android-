@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识图谱</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #FAFAFA; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+        #container { width: 100vw; height: 100vh; }
+        .loading { color: #666; font-size: 16px; display: flex; align-items: center; justify-content: center; height: 100%; }
+    </style>
+</head>
+<body>
+<div id="container"><div class="loading">加载中...</div></div>
+
+<script>
+var echartsLoaded = false;
+
+function loadECharts() {
+    return new Promise(function(resolve, reject) {
+        // 优先使用本地文件，避免网络问题
+        var script = document.createElement('script');
+        script.src = 'file:///android_asset/echarts.min.js';
+        script.onload = function() {
+            console.log('ECharts loaded from local');
+            echartsLoaded = true;
+            resolve();
+        };
+        script.onerror = function() {
+            // 本地失败，尝试CDN
+            console.log('Local ECharts failed, trying CDN');
+            var fallback = document.createElement('script');
+            fallback.src = 'https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js';
+            fallback.onload = function() {
+                console.log('ECharts loaded from CDN');
+                echartsLoaded = true;
+                resolve();
+            };
+            fallback.onerror = function() {
+                reject(new Error('ECharts 加载失败'));
+            };
+            document.head.appendChild(fallback);
+        };
+        document.head.appendChild(script);
+    });
+}
+
+// 距离配置
+var DISTANCE = {
+    part: 0,      // 中心
+    chapter: 300, // 章距离部分
+    section: 280, // 节距离章
+    knowledge: 260 // 知识点距离节
+};
+
+// 部分的基础角度配置（每个部分120度扇形空间）
+// 预留p_4位置在270度（正下方）
+var PART_ANGLES = {
+    'p_1': { center: 270, range: 120 }, // 数理逻辑 - 上方区域 (210-330度)
+    'p_2': { center: 30, range: 120 },  // 集合论 - 右下区域 (330-90度跨越0度，实际为-30到90)
+    'p_3': { center: 150, range: 120 }, // 代数系统 - 左下区域 (90-210度)
+    'p_4': { center: 270, range: 120 }  // 预留 - 正下方
+};
+
+// 将角度转换为弧度
+function toRad(deg) {
+    return deg * Math.PI / 180;
+}
+
+// 计算子节点的角度分配
+// parentAngleRange: { start: 起始角度, end: 结束角度 } (度数)
+// index: 当前节点索引, count: 子节点总数
+// 返回该节点的中心角度
+function calcNodeAngle(parentAngleRange, index, count, level) {
+    var start = parentAngleRange.start;
+    var end = parentAngleRange.end;
+    
+    // 处理跨越0度的情况
+    if (end < start) {
+        end += 360;
+    }
+    
+    var totalRange = end - start;
+    // 知识点层级增加角度间隔
+    var padding = level >= 2 ? 0.3 : 0.15;
+    var usableRange = totalRange * (1 - padding);
+    var step = usableRange / Math.max(count - 1, 1);
+    var nodeAngle = start + padding * totalRange / 2 + step * index;
+    
+    // 归一化到0-360
+    while (nodeAngle >= 360) nodeAngle -= 360;
+    while (nodeAngle < 0) nodeAngle += 360;
+    
+    return nodeAngle;
+}
+
+// 根据角度和距离计算坐标
+function calcPosition(parentX, parentY, angleDeg, distance) {
+    var angleRad = toRad(angleDeg);
+    return {
+        x: parentX + distance * Math.cos(angleRad),
+        y: parentY + distance * Math.sin(angleRad)
+    };
+}
+
+// 构建父子关系映射
+function buildTree(links) {
+    var children = {};
+    var parents = {};
+    
+    links.forEach(function(link) {
+        var source = typeof link.source === 'object' ? link.source.id : link.source;
+        var target = typeof link.target === 'object' ? link.target.id : link.target;
+        
+        if (!children[source]) children[source] = [];
+        children[source].push(target);
+        parents[target] = source;
+    });
+    
+    return { children: children, parents: parents };
+}
+
+// 获取节点类型
+function getNodeType(nodeId) {
+    if (nodeId.startsWith('p_')) return 0; // 部分
+    if (nodeId.startsWith('c_')) return 1; // 章
+    if (nodeId.startsWith('s_')) return 2; // 节
+    return 3; // 知识点
+}
+
+// 计算所有节点位置
+function calculatePositions(nodes, links) {
+    var tree = buildTree(links);
+    var positions = {};
+    var nodeMap = {};
+    
+    // 创建节点映射
+    nodes.forEach(function(node) {
+        nodeMap[node.id] = node;
+    });
+    
+    // 找到所有根节点（部分）
+    var rootNodes = nodes.filter(function(n) {
+        return getNodeType(n.id) === 0;
+    });
+    
+    // 设置根节点位置（中心）
+    rootNodes.forEach(function(node) {
+        var partConfig = PART_ANGLES[node.id];
+        if (partConfig) {
+            // 部分放在中心，但稍微偏移以避免完全重叠
+            var offset = calcPosition(0, 0, partConfig.center, 100);
+            positions[node.id] = { x: offset.x, y: offset.y };
+        } else {
+            positions[node.id] = { x: 0, y: 0 };
+        }
+    });
+    
+    // 递归计算子节点位置
+    function layoutChildren(parentId, angleRange, level) {
+        var childIds = tree.children[parentId] || [];
+        if (childIds.length === 0) return;
+        
+        var parentPos = positions[parentId];
+        var distance;
+        switch(level) {
+            case 0: distance = DISTANCE.chapter; break;
+            case 1: distance = DISTANCE.section; break;
+            case 2: distance = DISTANCE.knowledge; break;
+            default: distance = 100;
+        }
+        
+        childIds.forEach(function(childId, index) {
+            var angle = calcNodeAngle(angleRange, index, childIds.length, level);
+            var pos = calcPosition(parentPos.x, parentPos.y, angle, distance);
+            positions[childId] = pos;
+            
+            // 为子节点分配角度范围
+            var childCount = (tree.children[childId] || []).length;
+            var totalRange = angleRange.end > angleRange.start ? 
+                angleRange.end - angleRange.start : 
+                angleRange.end + 360 - angleRange.start;
+            var childRange = childCount > 0 ? totalRange / childIds.length : 0;
+            var childStart = angle - childRange / 2;
+            var childEnd = angle + childRange / 2;
+            
+            // 递归布局
+            layoutChildren(childId, { start: childStart, end: childEnd }, level + 1);
+        });
+    }
+    
+    // 从每个部分开始布局
+    rootNodes.forEach(function(part) {
+        var config = PART_ANGLES[part.id];
+        if (config) {
+            var start = config.center - config.range / 2;
+            var end = config.center + config.range / 2;
+            layoutChildren(part.id, { start: start, end: end }, 0);
+        }
+    });
+    
+    // 应用位置到节点
+    nodes.forEach(function(node) {
+        if (positions[node.id]) {
+            node.x = positions[node.id].x;
+            node.y = positions[node.id].y;
+        }
+    });
+    
+    return nodes;
+}
+
+loadECharts().then(function() {
+    window.initKnowledgeGraph = function(data) {
+        console.log('initKnowledgeGraph called with:', JSON.stringify(data));
+        
+        if (!data || !data.nodes || data.nodes.length === 0) {
+            document.getElementById('container').innerHTML = '<div class="loading">暂无数据</div>';
+            return;
+        }
+        
+        console.log('Nodes count:', data.nodes.length);
+        console.log('Links count:', data.links ? data.links.length : 0);
+
+        if (window.myChart) {
+            var positionedNodes = calculatePositions(data.nodes, data.links || []);
+            window.myChart.setOption({
+                series: [{
+                    data: positionedNodes,
+                    links: data.links || []
+                }]
+            });
+            return;
+        }
+
+        window.myChart = echarts.init(document.getElementById('container'));
+
+        var positionedNodes = calculatePositions(data.nodes, data.links || []);
+
+        var option = {
+            backgroundColor: '#FAFAFA',
+            tooltip: { 
+                trigger: 'item',
+                formatter: function(params) {
+                    if (params.dataType === 'node') {
+                        return params.data.name;
+                    }
+                    return '';
+                }
+            },
+            legend: {
+                data: ['部分', '章', '节', '知识点'],
+                top: 10,
+                left: 'center',
+                textStyle: { fontSize: 12, color: '#666' }
+            },
+            series: [{
+                type: 'graph',
+                layout: 'none',
+                data: positionedNodes,
+                links: data.links || [],
+                categories: data.categories,
+                roam: true,
+                draggable: true,
+                animationDuration: 300,
+                animationEasing: 'cubicOut',
+                label: {
+                    show: true,
+                    position: 'bottom',
+                    fontSize: 11,
+                    color: '#333'
+                },
+                lineStyle: {
+                    color: '#BDBDBD',
+                    width: 1.5,
+                    curveness: 0.1
+                },
+                emphasis: {
+                    focus: 'adjacency',
+                    lineStyle: { width: 2, color: '#FF9800' }
+                },
+                scaleLimit: { min: 0.1, max: 5 },
+                zoom: 0.7,
+                center: ['50%', '50%']
+            }]
+        };
+
+        window.myChart.setOption(option);
+
+        window.myChart.on('click', function(params) {
+            if (params.dataType === 'node' && typeof Android !== 'undefined') {
+                Android.onNodeClick(params.data.id, params.data.name, params.data.category);
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            window.myChart.resize();
+        });
+    };
+}).catch(function(err) {
+    console.error('ECharts load error:', err);
+    document.getElementById('container').innerHTML = '<div class="loading">图表库加载失败: ' + err.message + '</div>';
+});
+</script>
+</body>
+</html>

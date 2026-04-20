@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:paddingHorizontal="30dp"
+    tools:context=".TeacherRegisterActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="30dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_revert"
+            android:contentDescription="返回"
+            app:tint="@color/blue" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="教师注册"
+            android:textColor="@color/blue"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- 用户名输入框 -->
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="用户名（3-16位字母/数字/下划线）"
+        android:paddingHorizontal="20dp"
+        android:textColorHint="@color/gray"
+        android:textSize="16sp" />
+
+    <!-- 密码输入框 -->
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="密码（6-20位）"
+        android:inputType="textPassword"
+        android:paddingHorizontal="20dp"
+        android:textColorHint="@color/gray"
+        android:textSize="16sp" />
+
+    <!-- 确认密码输入框 -->
+    <EditText
+        android:id="@+id/et_confirm_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edittext_bg"
+        android:hint="确认密码"
+        android:inputType="textPassword"
+        android:paddingHorizontal="20dp"
+        android:textColorHint="@color/gray"
+        android:textSize="16sp" />
+
+    <!-- 注册按钮 -->
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_login_bg"
+        android:text="注册"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <!-- 用户名提示 -->
+    <TextView
+        android:id="@+id/tv_username_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="用户名格式：3-16位字母/数字/下划线"
+        android:textColor="@color/Orange"
+        android:textSize="12sp" />
+
+    <!-- 密码提示 -->
+    <TextView
+        android:id="@+id/tv_password_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="密码格式：6-20位"
+        android:textColor="@color/Orange"
+        android:textSize="12sp" />
+
+</LinearLayout>

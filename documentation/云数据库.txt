@@ -1,0 +1,104 @@
+==================== 1. 用户表：user ====================
+{
+  "bsonType": "object",
+  "required": ["userId", "username", "password", "role"],
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": false
+  },
+  "properties": {
+    "_id": { "description": "系统ID" },
+    "userId": { "bsonType": "int", "description": "用户编号" },
+    "username": { "bsonType": "string", "description": "用户名" },
+    "password": { "bsonType": "string", "description": "密码" },
+    "role": { "bsonType": "int", "description": "0学生 1教师" },
+    "classId": { "bsonType": "int", "description": "班级编号" },
+    "createTime": { "bsonType": "long", "description": "创建时间" },
+    "updateTime": { "bsonType": "long", "description": "更新时间" }
+  }
+}
+
+==================== 2. 班级表：class ====================
+{
+  "bsonType": "object",
+  "required": ["classId", "className", "teacherId"],
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": false
+  },
+  "properties": {
+    "_id": { "description": "系统ID" },
+    "classId": { "bsonType": "int", "description": "班级编号" },
+    "className": { "bsonType": "string", "description": "班级名" },
+    "teacherId": { "bsonType": "int", "description": "教师编号" },
+    "createTime": { "bsonType": "long", "description": "创建时间" },
+    "updateTime": { "bsonType": "long", "description": "更新时间" }
+  }
+}
+
+==================== 3. 题目表：question ====================
+{
+  "bsonType": "object",
+  "required": ["qId", "content", "answer"],
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": false
+  },
+  "properties": {
+    "_id": { "description": "系统ID" },
+    "qId": { "bsonType": "int", "description": "题号" },
+    "content": { "bsonType": "string", "description": "题目文本" },
+    "answer": { "bsonType": "string", "description": "答案" },
+    "sectionId": { "bsonType": "int", "description": "节号" },
+    "imageUrl": { "bsonType": "string", "description": "图片url" }
+  }
+}
+
+==================== 4. 学生答题表：answer ====================
+{
+  "bsonType": "object",
+  "required": ["qId", "userId", "studentAnswer"],
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": false
+  },
+  "properties": {
+    "_id": { "description": "系统ID" },
+    "qId": { "bsonType": "int", "description": "题号" },
+    "userId": { "bsonType": "int", "description": "用户编号" },
+    "studentAnswer": { "bsonType": "string", "description": "学生答案" },
+    "status": { "bsonType": "int", "description": "0未批改 1正确 2错误" },
+    "teacherMsg": { "bsonType": "string", "description": "教师留言" },
+    "createTime": { "bsonType": "long", "description": "提交时间" },
+    "updateTime": { "bsonType": "long", "description": "批改时间" }
+  }
+}
+
+==================== 5. 课堂资源表：resource ====================
+{
+  "bsonType": "object",
+  "required": ["resId", "url", "teacherId"],
+  "permission": {
+    "read": true,
+    "create": true,
+    "update": true,
+    "delete": false
+  },
+  "properties": {
+    "_id": { "description": "系统ID" },
+    "resId": { "bsonType": "int", "description": "资源编号" },
+    "url": { "bsonType": "string", "description": "资源url" },
+    "name": { "bsonType": "string", "description": "资源名" },
+    "teacherId": { "bsonType": "int", "description": "教师编号" },
+    "createTime": { "bsonType": "long", "description": "上传时间" },
+    "updateTime": { "bsonType": "long", "description": "更新时间" }
+  }
+}
