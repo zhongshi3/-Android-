@@ -277,7 +277,7 @@ class ClassStatsDetailActivity : AppCompatActivity() {
                     for ((qId, answer) in answers) {
                         if (sectionQuestions.any { it.questionNumber == qId }) {
                             answeredQIds.add(qId)
-                            if (answer.status == 1) { // 正确
+                            if (answer.status == CloudApiHelper.AnswerStatus.CORRECT) { // 正确
                                 correctQIds.add(qId)
                             }
                         }

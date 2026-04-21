@@ -59,7 +59,7 @@ class StudentRegisterActivity : AppCompatActivity() {
         
         // 获取当前教师ID
         val currentUser = UserManager.getCurrentUser()
-        if (currentUser != null && currentUser.role == 1) {
+        if (currentUser != null && currentUser.role == CloudApiHelper.Role.TEACHER) {
             teacherId = currentUser.userId
         } else {
             Toast.makeText(this, "请以教师身份登录", Toast.LENGTH_SHORT).show()

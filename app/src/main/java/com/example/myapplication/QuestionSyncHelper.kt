@@ -148,9 +148,9 @@ class QuestionSyncHelper(private val context: Context) {
                         if (success) totalInserted++
                     }
 
-                    // 批量标记删除题目（将节号置为0）
+                    // 批量标记删除题目（使用isDeleted标记）
                     if (allDeletedQuestionNumbers.isNotEmpty()) {
-                        totalDeleted = updateSectionNumbers(allDeletedQuestionNumbers.toList(), QuestionDBHelper.SECTION_DELETED)
+                        totalDeleted = markQuestionsAsDeleted(allDeletedQuestionNumbers.toList())
                     }
                 }
 

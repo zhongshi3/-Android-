@@ -273,7 +273,7 @@ class GradingDetailActivity : AppCompatActivity() {
         }
 
         val student = studentsList[selectedStudentIndex]
-        val status = if (isCorrectSelected == true) 1 else 2
+        val status = if (isCorrectSelected == true) CloudApiHelper.AnswerStatus.CORRECT else CloudApiHelper.AnswerStatus.WRONG
         val teacherMsg = etTeacherMsg.text.toString().trim()
 
         // 上传批改结果

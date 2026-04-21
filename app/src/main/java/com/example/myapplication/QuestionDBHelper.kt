@@ -9,7 +9,7 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
 
     companion object {
         private const val DB_NAME = "question_bank.db"
-        private const val DB_VERSION = 5  // 版本升级：删除学生答案和状态字段，简化表结构
+        private const val DB_VERSION = 6  // 版本升级：新增 is_deleted 字段
         const val TABLE_NAME = "questions"
 
         // 列名常量
@@ -20,9 +20,7 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
         const val COLUMN_SECTION_ID = "section_id"
         const val COLUMN_IMAGE_URL = "image_url"
         const val COLUMN_IN_ERROR_BOOK = "in_error_book"  // 是否在错题库中
-        
-        // 节号常量：section_id=0 表示题目已被删除
-        const val SECTION_DELETED = 0
+        const val COLUMN_IS_DELETED = "is_deleted"  // 是否已删除
     }
 
     private val createTableSql = """
@@ -33,7 +31,8 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
             $COLUMN_ANSWER TEXT NOT NULL,
             $COLUMN_SECTION_ID INTEGER DEFAULT 0,
             $COLUMN_IMAGE_URL TEXT,
-            $COLUMN_IN_ERROR_BOOK INTEGER DEFAULT 0
+            $COLUMN_IN_ERROR_BOOK INTEGER DEFAULT 0,
+            $COLUMN_IS_DELETED INTEGER DEFAULT 0
         );
     """.trimIndent()
 
@@ -57,29 +56,16 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
                         $COLUMN_ANSWER TEXT NOT NULL,
                         $COLUMN_SECTION_ID INTEGER DEFAULT 0,
                         $COLUMN_IMAGE_URL TEXT,
-                        $COLUMN_IN_ERROR_BOOK INTEGER DEFAULT 0
+                        $COLUMN_IN_ERROR_BOOK INTEGER DEFAULT 0,
+                        $COLUMN_IS_DELETED INTEGER DEFAULT 0
                     )
                 """.trimIndent())
                 db.execSQL("INSERT INTO $TABLE_NAME (id, question_number, content, answer, section_id, image_url, in_error_book) SELECT id, question_number, content, answer, section_id, image_url, in_error_book FROM backup_questions")
                 db.execSQL("DROP TABLE backup_questions")
             }
-            4 -> {
-                // 版本5：删除学生答案、状态字段（重建表）
-                db.execSQL("CREATE TEMPORARY TABLE backup_questions AS SELECT id, question_number, content, answer, section_id, image_url, in_error_book FROM $TABLE_NAME")
-                db.execSQL("DROP TABLE $TABLE_NAME")
-                db.execSQL("""
-                    CREATE TABLE IF NOT EXISTS $TABLE_NAME (
-                        $COLUMN_ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                        $COLUMN_QUESTION_NUMBER INTEGER NOT NULL UNIQUE,
-                        $COLUMN_CONTENT TEXT NOT NULL,
-                        $COLUMN_ANSWER TEXT NOT NULL,
-                        $COLUMN_SECTION_ID INTEGER DEFAULT 0,
-                        $COLUMN_IMAGE_URL TEXT,
-                        $COLUMN_IN_ERROR_BOOK INTEGER DEFAULT 0
-                    )
-                """.trimIndent())
-                db.execSQL("INSERT INTO $TABLE_NAME (id, question_number, content, answer, section_id, image_url, in_error_book) SELECT id, question_number, content, answer, section_id, image_url, in_error_book FROM backup_questions")
-                db.execSQL("DROP TABLE backup_questions")
+            4, 5 -> {
+                // 版本6：新增 is_deleted 列
+                db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $COLUMN_IS_DELETED INTEGER DEFAULT 0")
             }
         }
     }
@@ -177,7 +163,7 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
         
         // 统计总题数
         val totalCursor = db.rawQuery(
-            "SELECT COUNT(*) FROM $TABLE_NAME WHERE $COLUMN_SECTION_ID != $SECTION_DELETED",
+            "SELECT COUNT(*) FROM $TABLE_NAME WHERE $COLUMN_IS_DELETED = 0",
             null
         )
         totalCursor.use {
@@ -188,7 +174,7 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
         
         // 统计错题数量
         val errorCursor = db.rawQuery(
-            "SELECT COUNT(*) FROM $TABLE_NAME WHERE $COLUMN_IN_ERROR_BOOK = 1 AND $COLUMN_SECTION_ID != $SECTION_DELETED",
+            "SELECT COUNT(*) FROM $TABLE_NAME WHERE $COLUMN_IN_ERROR_BOOK = 1 AND $COLUMN_IS_DELETED = 0",
             null
         )
         errorCursor.use {
@@ -200,14 +186,14 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
         return stats
     }
 
-    // 获取错题列表（过滤已删除的题目，节号为0的题目不显示）
+    // 获取错题列表（过滤已删除的题目）
     fun getErrorBookQuestions(): List<QuestionEntity> {
         val questions = mutableListOf<QuestionEntity>()
         val db = readableDatabase
         val cursor = db.query(
             TABLE_NAME,
             null,
-            "$COLUMN_IN_ERROR_BOOK = ? AND $COLUMN_SECTION_ID != $SECTION_DELETED",
+            "$COLUMN_IN_ERROR_BOOK = ? AND $COLUMN_IS_DELETED = 0",
             arrayOf("1"),
             null,
             null,
@@ -235,7 +221,7 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
     fun getLocalMaxQuestionNumber(): Int {
         val db = readableDatabase
         val cursor = db.rawQuery(
-            "SELECT MAX($COLUMN_QUESTION_NUMBER) FROM $TABLE_NAME WHERE $COLUMN_SECTION_ID != $SECTION_DELETED",
+            "SELECT MAX($COLUMN_QUESTION_NUMBER) FROM $TABLE_NAME WHERE $COLUMN_IS_DELETED = 0",
             null
         )
         var maxNumber = 0
@@ -247,14 +233,14 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
         return maxNumber
     }
 
-    // 根据节号筛选获取所有有效题目（节号不为0）
+    // 根据节号筛选获取所有有效题目（isDeleted为0）
     fun getAllValidQuestions(): List<QuestionEntity> {
         val questions = mutableListOf<QuestionEntity>()
         val db = readableDatabase
         val cursor = db.query(
             TABLE_NAME,
             null,
-            "$COLUMN_SECTION_ID != $SECTION_DELETED",
+            "$COLUMN_IS_DELETED = 0",
             null,
             null,
             null,
@@ -269,8 +255,8 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
         return questions
     }
 
-    // 批量更新节号（用于标记删除题目）
-    fun updateSectionNumbers(questionNumbers: List<Int>, sectionId: Int): Int {
+    // 批量标记题目为已删除
+    fun markQuestionsAsDeleted(questionNumbers: List<Int>): Int {
         if (questionNumbers.isEmpty()) return 0
         
         val db = writableDatabase
@@ -279,7 +265,7 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
         val selectionArgs = questionNumbers.map { it.toString() }.toTypedArray()
         
         val values = ContentValues().apply {
-            put(COLUMN_SECTION_ID, sectionId)
+            put(COLUMN_IS_DELETED, 1)
         }
         
         return db.update(TABLE_NAME, values, selection, selectionArgs)
@@ -334,7 +320,8 @@ class QuestionDBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, nu
             answer = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_ANSWER)),
             sectionId = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_SECTION_ID)),
             imageUrl = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_IMAGE_URL)),
-            inErrorBook = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_IN_ERROR_BOOK)) == 1
+            inErrorBook = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_IN_ERROR_BOOK)) == 1,
+            isDeleted = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_IS_DELETED)) == 1
         )
     }
 }
@@ -347,5 +334,6 @@ data class QuestionEntity(
     val answer: String,
     val sectionId: Int = 0,
     val imageUrl: String? = null,
-    val inErrorBook: Boolean = false
+    val inErrorBook: Boolean = false,
+    val isDeleted: Boolean = false  // 是否已删除（使用isDeleted标记）
 )

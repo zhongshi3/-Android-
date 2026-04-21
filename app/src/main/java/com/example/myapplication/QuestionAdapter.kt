@@ -14,12 +14,10 @@ class QuestionAdapter(
     private val onItemClick: (QuestionEntity) -> Unit
 ) : RecyclerView.Adapter<QuestionAdapter.ViewHolder>() {
 
-    // 状态常量（与云端保持一致）
-    companion object {
-        const val STATUS_NOT_CHECKED = 0  // 未批改
-        const val STATUS_CORRECT = 1      // 正确
-        const val STATUS_WRONG = 2        // 错误
-    }
+    // 状态常量（已迁移到 CloudApiHelper.AnswerStatus，建议统一使用）
+    // const val STATUS_NOT_CHECKED = 0
+    // const val STATUS_CORRECT = 1
+    // const val STATUS_WRONG = 2
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvQuestionNumber: TextView = itemView.findViewById(R.id.tv_question_number)
@@ -51,15 +49,15 @@ class QuestionAdapter(
             answerStatus != null -> {
                 // 有云端答题状态
                 when (answerStatus.status) {
-                    STATUS_CORRECT -> {
+                    CloudApiHelper.AnswerStatus.CORRECT -> {
                         holder.tvStatus.text = "正确"
                         holder.tvStatus.setBackgroundResource(R.drawable.bg_status_checked)
                     }
-                    STATUS_WRONG -> {
+                    CloudApiHelper.AnswerStatus.WRONG -> {
                         holder.tvStatus.text = "错误"
                         holder.tvStatus.setBackgroundResource(R.drawable.bg_status_wrong)
                     }
-                    STATUS_NOT_CHECKED -> {
+                    CloudApiHelper.AnswerStatus.NOT_CHECKED -> {
                         holder.tvStatus.text = "待批改"
                         holder.tvStatus.setBackgroundResource(R.drawable.bg_status_not_checked)
                     }

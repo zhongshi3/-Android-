@@ -6,17 +6,17 @@
 ## 主要功能
 
 ### 1. 数据库结构升级
-- **版本**: 从 v3 升级到 v4
-- **新增字段**: `image_url` (图片URL)
-- **节号逻辑**: `section_id = 0` 表示题目已被删除
-- **常量定义**: `QuestionDBHelper.SECTION_DELETED = 0`
+- **版本**: 从 v5 升级到 v6
+- **新增字段**: `image_url` (图片URL)、`is_deleted` (删除标记)
+- **删除标记**: 使用 `is_deleted = true` 表示题目已被删除
+- **常量定义**: `QuestionDBHelper.COLUMN_IS_DELETED = "is_deleted"`
 
 ### 2. 题目实体类更新
 ```kotlin
 data class QuestionEntity(
     // ... 原有字段
-    val imageUrl: String? = null,  // 新增图片URL字段
-    // ... 其他字段
+    val imageUrl: String? = null,  // 图片URL字段
+    val isDeleted: Boolean = false  // 删除标记（使用isDeleted）
 )
 ```
 
@@ -24,14 +24,14 @@ data class QuestionEntity(
 
 #### 获取有效题目（排除已删除题目）
 ```kotlin
-fun getAllValidQuestions(): List<QuestionEntity>  // 节号不为0
-fun getValidErrorBookQuestions(): List<QuestionEntity>  // 错题本专用
+fun getAllValidQuestions(): List<QuestionEntity>  // isDeleted = 0
+fun getErrorBookQuestions(): List<QuestionEntity>  // 错题本专用
 ```
 
 #### 同步相关方法
 ```kotlin
 fun getLocalMaxQuestionNumber(): Int  // 获取本地最大题号
-fun updateSectionNumbers(): Int  // 批量更新节号（标记删除）
+fun markQuestionsAsDeleted(): Int  // 批量标记删除（使用isDeleted）
 fun insertOrUpdateQuestion(): Boolean  // 插入或更新题目
 ```
 
@@ -43,7 +43,7 @@ fun insertOrUpdateQuestion(): Boolean  // 插入或更新题目
 - 同步成功后自动刷新界面
 
 #### 错题本 (ErrorBookActivity)
-- 使用 `getValidErrorBookQuestions()` 只显示有效错题
+- 使用 `getErrorBookQuestions()` 只显示有效错题
 - 自动过滤已删除题目
 
 #### 学习进度 (ProgressActivity)
@@ -56,15 +56,15 @@ fun insertOrUpdateQuestion(): Boolean  // 插入或更新题目
 - **路由**: `action = "syncQuestions"`
 - **参数**: `maxQuestionNumber` (本地最大题号)
 - **响应**:
-  - `newQuestions`: 题号大于本地最大题号的所有题目
-  - `deletedQuestionNumbers`: 所有节号为0的题号
+  - `newQuestions`: 题号大于本地最大题号的所有题目（过滤isDeleted）
+  - `deletedQuestionNumbers`: 所有isDeleted=true的题号
 
 #### 云函数实现 (`register/index.js`)
 ```javascript
 async function handleQuestionSync(event, db) {
     // 1. 获取参数
-    // 2. 查询新增题目 (qId > maxQuestionNumber)
-    // 3. 查询删除题目 (sectionId = 0)
+    // 2. 查询新增题目 (qId > maxQuestionNumber, isDeleted != true)
+    // 3. 查询删除题目 (isDeleted = true)
     // 4. 返回结果
 }
 ```
@@ -81,7 +81,7 @@ async function handleQuestionSync(event, db) {
 2. 发送同步请求到云函数
 3. 解析响应数据
 4. 批量插入/更新新题目
-5. 批量标记删除题目（节号置为0）
+5. 批量标记删除题目（使用isDeleted标记）
 6. 刷新界面显示
 
 ### 7. CloudApiHelper 扩展
@@ -102,30 +102,30 @@ async function handleQuestionSync(event, db) {
 - 支持题目附带图片
 
 ### 3. 题目删除机制
-- 云端将题目 `sectionId` 设置为 0 表示删除
-- 本地同步时自动过滤节号为0的题目
-- 本地数据库保留删除标记，不物理删除
+- 云端将题目 `isDeleted` 设置为 `true` 表示删除
+- 本地同步时自动过滤 isDeleted=1 的题目
+- 本地数据库使用 `is_deleted` 列标记删除
 
 ### 4. 数据同步规则
 - **新增题目**: 题号 > 本地最大题号
 - **更新题目**: 云端修改已有题目的内容
-- **删除题目**: 云端将节号设置为0
+- **删除题目**: 云端将 isDeleted 设置为 true
 - **同步频率**: 每次进入习题库时检查
 
 ## 部署说明
 
 ### 1. 云函数更新
 1. 将修改后的 `register/index.js` 上传到 uniCloud
-2. 确保云数据库 `question` 表包含 `imageUrl` 字段
+2. 确保云数据库 `question` 表包含 `isDeleted` 字段
 3. 测试同步功能是否正常工作
 
 ### 2. 本地应用更新
-1. 安装新版应用（数据库版本升级）
+1. 安装新版应用（数据库版本升级到v6）
 2. 首次运行会自动升级数据库结构
-3. 原有题目数据会保留
+3. 原有题目数据会保留，新增 `is_deleted` 列
 
 ### 3. 网络配置
-- 修改 `QuestionSyncHelper.CLOUD_FUNCTION_URL` 为实际云函数地址
+- 修改 `QuestionSyncHelper.cloudFunctionUrl` 为实际云函数地址
 - 确保网络连接正常
 - 配置适当的超时时间
 
@@ -159,7 +159,7 @@ async function handleQuestionSync(event, db) {
 - 结果回调到主线程
 
 ### 3. 数据过滤
-- 本地只查询有效题目
+- 本地只查询有效题目（isDeleted = 0）
 - 减少内存占用
 - 提高列表渲染性能
 
@@ -167,7 +167,7 @@ async function handleQuestionSync(event, db) {
 
 ### 1. 功能测试
 - 新增图片题目同步
-- 题目删除标记同步
+- 题目删除标记同步（使用isDeleted）
 - 本地最大题号计算
 - 界面刷新逻辑
 
@@ -183,8 +183,9 @@ async function handleQuestionSync(event, db) {
 
 ## 注意事项
 
-1. **节号为0** 的题目不会被显示在任何界面
+1. **isDeleted = true** 的题目不会被显示在任何界面
 2. 同步过程会保留用户已做的答案和批改状态
 3. 图片URL需要确保网络可访问
 4. 云函数地址需要正确配置
 5. 首次同步可能需要较长时间（取决于题目数量）
+6. 不再复用节号（sectionId）作为删除标记

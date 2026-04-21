@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat
 import java.net.HttpURLConnection
 import java.net.URL
 
+
 class QuestionDetailActivity : AppCompatActivity() {
 
     private lateinit var btnBack: ImageButton
@@ -40,13 +41,6 @@ class QuestionDetailActivity : AppCompatActivity() {
     private lateinit var dbHelper: QuestionDBHelper
     private var questionNumber: Int = 0
     private var currentQuestion: QuestionEntity? = null
-    
-    // 云端答案状态常量
-    companion object {
-        const val STATUS_NOT_CHECKED = 0  // 未批改
-        const val STATUS_CORRECT = 1      // 正确
-        const val STATUS_WRONG = 2         // 错误
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -199,7 +193,7 @@ class QuestionDetailActivity : AppCompatActivity() {
      */
     private fun showAnswerState(answer: CloudApiHelper.StudentAnswer) {
         when (answer.status) {
-            STATUS_CORRECT -> {
+            CloudApiHelper.AnswerStatus.CORRECT -> {
                 // 已批改正确
                 etStudentAnswer.setText(answer.studentAnswer)
                 etStudentAnswer.isEnabled = false  // 不可修改
@@ -224,7 +218,7 @@ class QuestionDetailActivity : AppCompatActivity() {
                     tvTeacherComment.visibility = View.GONE
                 }
             }
-            STATUS_WRONG -> {
+            CloudApiHelper.AnswerStatus.WRONG -> {
                 // 已批改错误
                 etStudentAnswer.setText(answer.studentAnswer)
                 etStudentAnswer.isEnabled = false  // 不可修改
@@ -249,7 +243,7 @@ class QuestionDetailActivity : AppCompatActivity() {
                     tvTeacherComment.visibility = View.GONE
                 }
             }
-            STATUS_NOT_CHECKED -> {
+            CloudApiHelper.AnswerStatus.NOT_CHECKED -> {
                 // 未批改状态
                 showNoAnswerState(answer)
             }

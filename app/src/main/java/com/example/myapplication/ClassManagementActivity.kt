@@ -97,8 +97,8 @@ class ClassManagementActivity : AppCompatActivity() {
             return
         }
         
-        // 检查是否为教师 (role == 1)
-        if (currentUser.role != 1) {
+        // 检查是否为教师
+        if (currentUser.role != CloudApiHelper.Role.TEACHER) {
             Toast.makeText(this, "只有教师可以访问班级管理功能", Toast.LENGTH_SHORT).show()
             finish()
             return
