@@ -70,7 +70,8 @@ const userController = {
     register: handleRegister,
     login: handleLogin,
     getStudentsInfo: handleGetStudentsInfo,
-    getClassStudents: handleGetClassStudents
+    getClassStudents: handleGetClassStudents,
+    changePassword: handleChangePassword
 }
 
 // 班级控制器
@@ -119,6 +120,7 @@ const actionMap = {
     login: userController.login,
     getStudentsInfo: userController.getStudentsInfo,
     getClassStudents: userController.getClassStudents,
+    changePassword: userController.changePassword,
     getClasses: classController.getClasses,
     createClass: classController.createClass,
     syncQuestions: questionController.syncQuestions,
@@ -172,6 +174,60 @@ exports.main = async (event, context) => {
 }
 
 // ==================== 用户服务层 ====================
+
+// 修改密码处理函数
+async function handleChangePassword(params, db, bcrypt) {
+    console.log('=== 处理修改密码请求 ===');
+
+    if (!db) return fail('数据库连接失败', -3);
+
+    const { userId, username, newPassword } = params;
+
+    // 参数校验
+    if (!userId || !username || !newPassword) {
+        return fail('用户ID、用户名和新密码不能为空');
+    }
+
+    // 密码长度校验（与注册登录一致）
+    if (newPassword.length < 6 || newPassword.length > 20) {
+        return fail('密码长度必须在6-20位之间');
+    }
+
+    try {
+        const userCollection = db.collection('user');
+
+        // 查询用户是否存在
+        const queryResult = await userCollection.where({ userId, username }).get();
+
+        if (queryResult.data.length === 0) {
+            return fail('用户不存在');
+        }
+
+        const user = queryResult.data[0];
+
+        // 验证新密码是否与原密码相同（前端已验证，此处再次确认）
+        const isSameAsOld = bcrypt.compareSync(newPassword, user.passwordHash);
+        if (isSameAsOld) {
+            return fail('新密码不能与原密码相同');
+        }
+
+        // 生成新密码的哈希
+        const newPasswordHash = bcrypt.hashSync(newPassword, 10);
+
+        // 更新密码
+        await userCollection.doc(user._id).update({
+            passwordHash: newPasswordHash,
+            updateTime: now()
+        });
+
+        console.log('密码修改成功！');
+        return ok('密码修改成功');
+
+    } catch (error) {
+        console.error('修改密码处理错误:', error);
+        return fail('数据库操作失败: ' + error.message, -2);
+    }
+}
 
 // 登录处理函数
 async function handleLogin(params, db, bcrypt) {
